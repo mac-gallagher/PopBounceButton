@@ -9,18 +9,18 @@ A highly-customizable animated button built with Facebook's Pop animation librar
 * Pure Swift 4
 
 ## Installation
-For now, only manual installation of PopBounceButton is supported:
 
+### CocoaPods
+PopBounceButton is available through [CocoaPods](<https://cocoapods.org/>). To install it, simply add the following line to your `Podfile`:
+
+	pod 'PopBounceButton', '~> 1.0'
+
+
+### Manual
 1. Download and drop `PopBounceButton.swift` into your project. 
-2. Install Facebook's [Pop](<https://github.com/facebook/pop>) library via Cocoapods by adding the following to your project Podfile: 
+2. Install Facebook's [Pop](<https://github.com/facebook/pop>) library via CocoaPods by adding the following line to your `Podfile`: 
 
-		pod 'pop', '~> 1.0'
-
-    and importing the module into your file 
-
-    ```swift
-    import pop
-    ```
+	    pod 'pop', '~> 1.0'
 
 ## Usage
 
@@ -34,25 +34,25 @@ For now, only manual installation of PopBounceButton is supported:
     
 2. To recieve events, conform your class to the protocol `PopBounceButtonDelegate` and set your button's `delegate` property:
 
-   ```swift
+    ```swift
     class ViewController: UIViewController, PopBounceButtonDelegate {
     
-    	override func viewDidLoad() {
-			let frame = CGRect(origin: .zero, size: CGSize(width: 100, height: 100))
-			let button = PopBounceButton(frame: frame)
-			view.addSubview(button)
-		
-			button.delegate = self
-		}
-	
-		func didTouchUpInside(onButton button: PopBounceButton) {
-			print("TouchUpInside recognized.")
-		}
-	
-		func didTouchUpOutside(onButton button: PopBounceButton) {
-			print("TouchUpOutside recognized.")
-		}
-	
+        override func viewDidLoad() {
+            let frame = CGRect(origin: .zero, size: CGSize(width: 100, height: 100))
+            let button = PopBounceButton(frame: frame)
+            view.addSubview(button)
+            
+            button.delegate = self
+        }
+        
+        func didTouchUpInside(onButton button: PopBounceButton) {
+            print("TouchUpInside recognized.")
+        }
+        
+        func didTouchUpOutside(onButton button: PopBounceButton) {
+            print("TouchUpOutside recognized.")
+        }
+        
     }
     ```
 
