@@ -12,7 +12,7 @@ A highly-customizable animated button built with Facebook's Pop animation librar
   s.author             = { "Mac Gallagher" => "jmgallagher36@gmail.com" }
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/mac-gallagher/PopBounceButton.git", :tag => "1.0.0" }
-  s.source_files  = "PopBounceButton/PopBounceButton/**/*"
+  s.source_files  = "Sources/**/*"
   s.framework  = "UIKit", "pop"
   s.dependency "pop", "~> 1.0"
 
