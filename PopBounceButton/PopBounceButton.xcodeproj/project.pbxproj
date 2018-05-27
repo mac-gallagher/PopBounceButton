@@ -11,7 +11,6 @@
 		AD244E0F20BA63B50038881D /* PopBounceButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD35E79620B90777000D6175 /* PopBounceButton.framework */; };
 		AD244E1020BA63B50038881D /* PopBounceButton.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD35E79620B90777000D6175 /* PopBounceButton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AD35E7AA20B90820000D6175 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35E7A920B90820000D6175 /* AppDelegate.swift */; };
-		AD35E7AC20B90820000D6175 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35E7AB20B90820000D6175 /* ViewController.swift */; };
 		AD35E7B120B90821000D6175 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD35E7B020B90821000D6175 /* Assets.xcassets */; };
 		AD35E7B420B90821000D6175 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD35E7B220B90821000D6175 /* LaunchScreen.storyboard */; };
 		AD35E7BC20B9087E000D6175 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35E7B920B9087E000D6175 /* AnimationViewController.swift */; };
@@ -54,7 +53,6 @@
 		AD35E79620B90777000D6175 /* PopBounceButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopBounceButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD35E7A720B90820000D6175 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD35E7A920B90820000D6175 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AD35E7AB20B90820000D6175 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AD35E7B020B90821000D6175 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD35E7B320B90821000D6175 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD35E7B520B90821000D6175 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 				AD35E7BA20B9087E000D6175 /* TableViewController.swift */,
 				AD35E7BB20B9087E000D6175 /* TinderViewController.swift */,
 				AD35E7A920B90820000D6175 /* AppDelegate.swift */,
-				AD35E7AB20B90820000D6175 /* ViewController.swift */,
 				AD35E7B020B90821000D6175 /* Assets.xcassets */,
 				AD35E7B220B90821000D6175 /* LaunchScreen.storyboard */,
 				AD35E7B520B90821000D6175 /* Info.plist */,
@@ -325,7 +322,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD35E7BC20B9087E000D6175 /* AnimationViewController.swift in Sources */,
-				AD35E7AC20B90820000D6175 /* ViewController.swift in Sources */,
 				AD35E7BE20B9087E000D6175 /* TinderViewController.swift in Sources */,
 				AD35E7AA20B90820000D6175 /* AppDelegate.swift in Sources */,
 				AD35E7BD20B9087E000D6175 /* TableViewController.swift in Sources */,
