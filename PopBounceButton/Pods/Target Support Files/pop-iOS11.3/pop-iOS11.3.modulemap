@@ -1,0 +1,6 @@
+framework module pop {
+  umbrella header "pop-iOS11.3-umbrella.h"
+
+  export *
+  module * { export * }
+}
