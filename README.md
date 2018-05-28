@@ -66,7 +66,7 @@ Attribute  | Description
 `springBounciness`  | The effective bounciness of the spring animation. Higher values increase spring movement range resulting in more oscillations and springiness. Defined as a value in the range [0, 20]. Defaults to 19.
 `springSpeed`   | The effective speed of the spring animation. Higher values increase the dampening power of the spring. Defined as a value in the range [0, 20]. Defaults to 10.
 `springVelocity`   | The initial velocity of the spring animation. Higher values increase the percieved force from the user's touch. Expressed in scale factor per second. Defaults to 6. **NOTE:** This attribute is dependent on the current values for `springBounciness` and `springSpeed`.
-`canceDuration`   | The total duration of the scale animation performed after a `touchUpOutside` event is recognized. Expressed in seconds. Defaults to 0.3.
+`cancelDuration`   | The total duration of the scale animation performed after a `touchUpOutside` event is recognized. Expressed in seconds. Defaults to 0.3.
 `scaleFactor`   | The factor by which to scale the button after a long-press is recognized. Defaults to 0.7.
 `scaleDuration`   | The total duration of the scale animation performed after a long-press is recognized. Expressed in seconds. Defaults to 0.1.
 `minimumPressDuration`   | The minimum period fingers must press on the button for a long-press to be recognized. Expressed in seconds. Defaults to 0.2.
