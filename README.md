@@ -1,7 +1,7 @@
 # PopBounceButton
 A highly-customizable animated button built with Facebook's Pop animation library. Inspired by the familiar button stack from Tinder.
 
-![TinderDemo](Screenshots/tinder_demo.gif)
+![TinderDemo](https://raw.githubusercontent.com/mac-gallagher/PopBounceButton/master/Screenshots/tinder_demo.gif)
 
 ## Features
 * Lightweight and highly customizable
@@ -77,7 +77,7 @@ The only property that cannot be modified directly (via its layer) is the button
 ### Example
 The code below produces the following output:
 
-![MessageButtonExample](Screenshots/example.gif)
+![MessageButtonExample](https://raw.githubusercontent.com/mac-gallagher/PopBounceButton/master/Screenshots/example.gif)
 
 ```swift
 //Initialize button
@@ -109,7 +109,6 @@ let tealColor = UIColor(red: 30/255, green: 228/255, blue: 188/255, alpha: 1).cg
 let gradientLayer = CAGradientLayer()
 gradientLayer.frame = button.bounds
 gradientLayer.colors = [greenColor, tealColor]
-gradientLayer.locations = [0.0, 1.0]
 gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
 gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
 button.layer.insertSublayer(gradientLayer, at: 0)   
