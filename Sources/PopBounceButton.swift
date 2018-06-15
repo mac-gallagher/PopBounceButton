@@ -9,19 +9,7 @@
 import UIKit
 import pop
 
-public protocol PopBounceButtonDelegate {
-    
-    func didTouchUpInside(onButton button: PopBounceButton)
-    
-    func didTouchUpOutside(onButton button: PopBounceButton)
-    
-}
-
 public class PopBounceButton: UIControl {
-    
-    public var delegate: PopBounceButtonDelegate?
-    
-    private var button = UIButton(type: .custom)
     
     //MARK: - Spring Animation Settings
     
@@ -144,6 +132,8 @@ public class PopBounceButton: UIControl {
     
     //MARK: - Other Variables
     
+    private var button = UIButton(type: .custom)
+    
     public var imageView: UIImageView? {
         return button.imageView
     }
@@ -152,7 +142,7 @@ public class PopBounceButton: UIControl {
         return button.layer
     }
     
-    //MARK: - Main Methods
+    // MARK: -
     
     public init() {
         super.init(frame: CGRect.zero)
@@ -171,43 +161,42 @@ public class PopBounceButton: UIControl {
     
     private func initialize() {
         backgroundColor = .white
-        super.addSubview(button)
+        initializeButton()
+    }
+    
+    private func initializeButton() {
         button.isUserInteractionEnabled = false
         button.layer.masksToBounds = true
+
+        addTarget(self, action: #selector(handleTouchDown), for: .touchDown)
+        addTarget(self, action: #selector(handleTouchUpInside), for: .touchUpInside)
+        addTarget(self, action: #selector(handleTouchUpOutside), for: .touchUpOutside)
+        
+        super.addSubview(button)
+        button.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
     }
     
-    public override func draw(_ rect: CGRect) {
-        button.frame = bounds
-    }
-    
-    public func setShadow(radius: CGFloat, opacity: Float, offset: CGSize = .zero, color: CGColor = UIColor.black.cgColor) {
+    public func setShadow(radius: CGFloat, opacity: Float, offset: CGSize = .zero, color: UIColor = UIColor.black) {
         super.layer.shadowRadius = radius
         super.layer.shadowOpacity = opacity
         super.layer.shadowOffset = offset
-        super.layer.shadowColor = color
+        super.layer.shadowColor = color.cgColor
     }
     
-   public  override func addSubview(_ view: UIView) {
+   public override func addSubview(_ view: UIView) {
         button.addSubview(view)
     }
     
-    //MARK: - Tracking Methods
+    //MARK: - Touch Handling Methods
     
     private var isButtonScaled = false
     
     private var longPressTimer = Timer()
     
-    public override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+    @objc private func handleTouchDown() {
         button.layer.shouldRasterize = true
         button.layer.rasterizationScale = UIScreen.main.scale
         longPressTimer = Timer.scheduledTimer(timeInterval: minimumPressDuration, target: self, selector: #selector(handleScale), userInfo: nil, repeats: false)
-        return true
-    }
-    
-    @objc private func handleScale() {
-        isButtonScaled = true
-        longPressTimer.invalidate()
-        scaleAnimation()
     }
     
     public override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
@@ -218,30 +207,30 @@ public class PopBounceButton: UIControl {
         return true
     }
     
-    ///The frame for which a user touch within triggers a `touchUpInside` event.
-    private var extendedFrame: CGRect {
-        let scaleFactor: CGFloat = 1.5
-        let maximumDx = min((scaleFactor - 1) * min(bounds.width, bounds.height), 100)
-        let dx: CGFloat = -1 * max(50, maximumDx)
-        return bounds.insetBy(dx: dx, dy: dx)
+    @objc private func handleScale() {
+        longPressTimer.invalidate()
+        isButtonScaled = true
+        scaleAnimation()
     }
     
-    public override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
-        longPressTimer.invalidate()
-        
-        guard let touchPoint = touch?.location(in: self) else { return }
-        if !extendedFrame.contains(touchPoint) {
-            delegate?.didTouchUpOutside(onButton: self)
-            cancelSpringAnimation()
+    @objc private func handleTouchUpInside() {
+        if isButtonScaled {
+            springAnimation(delay: 0.05)
         } else {
-            delegate?.didTouchUpInside(onButton: self)
-            if isButtonScaled {
-                springAnimation(delay: 0.05)
-            } else {
-                let velocity = CGSize(width: -springVelocity * button.frame.width / frame.width, height: -springVelocity * button.frame.height / frame.height)
-                springAnimation(velocity: velocity)
-            }
+            let velocityFactor = -button.frame.width / frame.width
+            let velocity = CGSize(width: velocityFactor * springVelocity, height: velocityFactor * springVelocity)
+            springAnimation(velocity: velocity)
         }
+        resetButton()
+    }
+    
+    @objc private func handleTouchUpOutside() {
+        cancelSpringAnimation()
+        resetButton()
+    }
+    
+    private func resetButton() {
+        longPressTimer.invalidate()
         button.layer.shouldRasterize = false
         isButtonScaled = false
     }
@@ -267,9 +256,6 @@ public class PopBounceButton: UIControl {
         guard let scaleAnim = POPBasicAnimation(propertyNamed: kPOPViewScaleXY) else { return }
         scaleAnim.toValue = NSValue(cgSize: CGSize(width: scaleFactor, height: scaleFactor))
         scaleAnim.duration = scaleDuration
-        scaleAnim.completionBlock = { (_,_)  in
-            self.isButtonScaled = true
-        }
         button.pop_add(scaleAnim, forKey: "scaleAnimation")
     }
     
@@ -282,13 +268,6 @@ public class PopBounceButton: UIControl {
     
     public func removeAllAnimations() {
         button.layer.pop_removeAllAnimations()
-        button.frame = bounds
     }
     
 }
-
-
-
-
-
-

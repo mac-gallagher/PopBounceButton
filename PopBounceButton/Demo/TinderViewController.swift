@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import pop
 import PopBounceButton
 
 class TinderViewController: UIViewController {
@@ -36,30 +35,36 @@ class TinderViewController: UIViewController {
         let undoButton = PopBounceButton()
         undoButton.setImage(#imageLiteral(resourceName: "undo"))
         undoButton.imageEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        undoButton.tag = 1
         configureButton(button: undoButton, diameter: smallDiameter)
         stackView.addArrangedSubview(undoButton)
         
         let passButton = PopBounceButton()
         passButton.setImage(#imageLiteral(resourceName: "pass"))
         passButton.imageEdgeInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+        passButton.tag = 2
         configureButton(button: passButton, diameter: largeDiameter)
         stackView.addArrangedSubview(passButton)
         
-        let starButton = PopBounceButton()
-        starButton.setImage(#imageLiteral(resourceName: "star"))
-        starButton.imageEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
-        configureButton(button: starButton, diameter: smallDiameter)
-        stackView.addArrangedSubview(starButton)
+        let superLikeButton = PopBounceButton()
+        superLikeButton.setImage(#imageLiteral(resourceName: "star"))
+        superLikeButton.imageEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        superLikeButton.tag = 3
+        configureButton(button: superLikeButton, diameter: smallDiameter)
+        stackView.addArrangedSubview(superLikeButton)
         
-        let heartButton = PopBounceButton()
-        heartButton.setImage(#imageLiteral(resourceName: "heart"))
-        heartButton.imageEdgeInsets = UIEdgeInsets(top: 15, left: 14, bottom: 13, right: 14)
-        configureButton(button: heartButton, diameter: largeDiameter)
-        stackView.addArrangedSubview(heartButton)
+        let likeButton = PopBounceButton()
+        likeButton.setImage(#imageLiteral(resourceName: "heart"))
+        likeButton.tag = 4
+        likeButton.imageEdgeInsets = UIEdgeInsets(top: 15, left: 14, bottom: 13, right: 14)
+        
+        configureButton(button: likeButton, diameter: largeDiameter)
+        stackView.addArrangedSubview(likeButton)
         
         let boostButton = PopBounceButton()
         boostButton.setImage(#imageLiteral(resourceName: "lightning"))
         boostButton.imageEdgeInsets = UIEdgeInsets(top: 13, left: 12, bottom: 11, right: 12)
+        boostButton.tag = 5
         configureButton(button: boostButton, diameter: smallDiameter)
         stackView.addArrangedSubview(boostButton)
     }
@@ -70,10 +75,33 @@ class TinderViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.widthAnchor.constraint(equalToConstant: diameter).isActive = true
         button.heightAnchor.constraint(equalToConstant: diameter).isActive = true
+        button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
+    }
+    
+    @objc func handleTap(_ sender: PopBounceButton) {
+        switch sender.tag {
+        case 1:
+            print("Undo")
+        case 2:
+            print("Pass")
+        case 3:
+            print("Super like")
+        case 4:
+            print("Like")
+        case 5:
+            print("Boost")
+        default:
+            break
+        }
     }
     
     
+    
+    
+    
 }
+
+
 
 
 

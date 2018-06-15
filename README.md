@@ -17,7 +17,7 @@ PopBounceButton is available through [CocoaPods](<https://cocoapods.org/>). To i
 
 
 ### Manual
-1. Download and drop `PopBounceButton.swift` into your project. 
+1. Download and drop the `Sources` directory into your project. 
 2. Install Facebook's [Pop](<https://github.com/facebook/pop>) library via CocoaPods by adding the following line to your `Podfile`: 
 
 	    pod 'pop', '~> 1.0'
@@ -32,27 +32,14 @@ PopBounceButton is available through [CocoaPods](<https://cocoapods.org/>). To i
     view.addSubview(button)
     ```
     
-2. To recieve events, conform your class to the protocol `PopBounceButtonDelegate` and set your button's `delegate` property:
+2. Attach a target to your button to handle any events.
 
     ```swift
-    class ViewController: UIViewController, PopBounceButtonDelegate {
-    
-        override func viewDidLoad() {
-            let frame = CGRect(origin: .zero, size: CGSize(width: 100, height: 100))
-            let button = PopBounceButton(frame: frame)
-            view.addSubview(button)
-            
-            button.delegate = self
-        }
-        
-        func didTouchUpInside(onButton button: PopBounceButton) {
-            print("TouchUpInside recognized.")
-        }
-        
-        func didTouchUpOutside(onButton button: PopBounceButton) {
-            print("TouchUpOutside recognized.")
-        }
-        
+    button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
+    ```
+    ```swift   
+    @objc func handleTap(_ sender: PopBounceButton) {
+        //do something
     }
     ```
 
@@ -115,7 +102,7 @@ button.layer.insertSublayer(gradientLayer, at: 0)
 ```
 
 ## Requirements
-* iOS 8.0+
+* iOS 9.0+
 * Xcode 9.0+
 
 ## Sources
