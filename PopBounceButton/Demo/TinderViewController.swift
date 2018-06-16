@@ -11,62 +11,64 @@ import PopBounceButton
 
 class TinderViewController: UIViewController {
     
+    let stackView: UIStackView = {
+        let sv = UIStackView()
+        sv.distribution = .equalSpacing
+        sv.alignment = .center
+        return sv
+    }()
+    
+    let undoButton: PopBounceButton = {
+        let button = PopBounceButton()
+        button.setImage(#imageLiteral(resourceName: "undo"))
+        button.tag = 1
+        return button
+    }()
+    
+    let passButton: PopBounceButton = {
+        let button = PopBounceButton()
+        button.setImage(#imageLiteral(resourceName: "pass"))
+        button.tag = 2
+        return button
+    }()
+    
+    let superLikeButton: PopBounceButton = {
+        let button = PopBounceButton()
+        button.setImage(#imageLiteral(resourceName: "star"))
+        button.tag = 3
+        return button
+    }()
+    
+    let likeButton: PopBounceButton = {
+        let button = PopBounceButton()
+        button.setImage(#imageLiteral(resourceName: "heart"))
+        button.tag = 4
+        return button
+    }()
+    
+    let boostButton: PopBounceButton = {
+        let button = PopBounceButton()
+        button.setImage(#imageLiteral(resourceName: "lightning"))
+        button.tag = 5
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Tinder App"
-        view.backgroundColor = UIColor(displayP3Red: 243/255, green: 245/255, blue: 248/255, alpha: 1)
+        view.backgroundColor = UIColor(red: 243/255, green: 245/255, blue: 248/255, alpha: 1)
+        setupButtons()
         setupStackView()
     }
     
-    func setupStackView() {
-        let stackView = UIStackView()
-        view.addSubview(stackView)
-        stackView.distribution = .equalSpacing
-        stackView.alignment = .center
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        stackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
-        stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
-        stackView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        
-        let largeDiameter: CGFloat = 66
-        let smallDiameter: CGFloat = 54
-        
-        let undoButton = PopBounceButton()
-        undoButton.setImage(#imageLiteral(resourceName: "undo"))
-        undoButton.imageEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
-        undoButton.tag = 1
+    func setupButtons() {
+        let largeDiameter: CGFloat = 66 * (view.bounds.width / 414) //based on iPhone 8+
+        let smallDiameter: CGFloat = 54 * (view.bounds.width / 414)
         configureButton(button: undoButton, diameter: smallDiameter)
-        stackView.addArrangedSubview(undoButton)
-        
-        let passButton = PopBounceButton()
-        passButton.setImage(#imageLiteral(resourceName: "pass"))
-        passButton.imageEdgeInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
-        passButton.tag = 2
         configureButton(button: passButton, diameter: largeDiameter)
-        stackView.addArrangedSubview(passButton)
-        
-        let superLikeButton = PopBounceButton()
-        superLikeButton.setImage(#imageLiteral(resourceName: "star"))
-        superLikeButton.imageEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
-        superLikeButton.tag = 3
         configureButton(button: superLikeButton, diameter: smallDiameter)
-        stackView.addArrangedSubview(superLikeButton)
-        
-        let likeButton = PopBounceButton()
-        likeButton.setImage(#imageLiteral(resourceName: "heart"))
-        likeButton.tag = 4
-        likeButton.imageEdgeInsets = UIEdgeInsets(top: 15, left: 14, bottom: 13, right: 14)
-        
         configureButton(button: likeButton, diameter: largeDiameter)
-        stackView.addArrangedSubview(likeButton)
-        
-        let boostButton = PopBounceButton()
-        boostButton.setImage(#imageLiteral(resourceName: "lightning"))
-        boostButton.imageEdgeInsets = UIEdgeInsets(top: 13, left: 12, bottom: 11, right: 12)
-        boostButton.tag = 5
         configureButton(button: boostButton, diameter: smallDiameter)
-        stackView.addArrangedSubview(boostButton)
     }
     
     func configureButton(button: PopBounceButton, diameter: CGFloat) {
@@ -76,6 +78,16 @@ class TinderViewController: UIViewController {
         button.widthAnchor.constraint(equalToConstant: diameter).isActive = true
         button.heightAnchor.constraint(equalToConstant: diameter).isActive = true
         button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
+    }
+    
+    func setupStackView() {
+        view.addSubview(stackView)
+        stackView.anchor(top: nil, left: view.safeAreaLayoutGuide.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingLeft: 24, paddingBottom: 13, paddingRight: 24)
+        stackView.addArrangedSubview(undoButton)
+        stackView.addArrangedSubview(passButton)
+        stackView.addArrangedSubview(superLikeButton)
+        stackView.addArrangedSubview(likeButton)
+        stackView.addArrangedSubview(boostButton)
     }
     
     @objc func handleTap(_ sender: PopBounceButton) {
@@ -94,10 +106,6 @@ class TinderViewController: UIViewController {
             break
         }
     }
-    
-    
-    
-    
     
 }
 

@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "undo.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "undo.png",
       "scale" : "2x"
     },
     {
