@@ -11,6 +11,8 @@ import PopBounceButton
 
 class TinderViewController: UIViewController {
     
+    //MARK: - Subviews
+    
     let stackView: UIStackView = {
         let sv = UIStackView()
         sv.distribution = .equalSpacing
@@ -53,41 +55,50 @@ class TinderViewController: UIViewController {
         return button
     }()
     
+    //MARK: - Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Tinder App"
         view.backgroundColor = UIColor(red: 243/255, green: 245/255, blue: 248/255, alpha: 1)
-        setupButtons()
         setupStackView()
-    }
-    
-    func setupButtons() {
-        let largeDiameter: CGFloat = 66 * (view.bounds.width / 414) //based on iPhone 8+
-        let smallDiameter: CGFloat = 54 * (view.bounds.width / 414)
-        configureButton(button: undoButton, diameter: smallDiameter)
-        configureButton(button: passButton, diameter: largeDiameter)
-        configureButton(button: superLikeButton, diameter: smallDiameter)
-        configureButton(button: likeButton, diameter: largeDiameter)
-        configureButton(button: boostButton, diameter: smallDiameter)
-    }
-    
-    func configureButton(button: PopBounceButton, diameter: CGFloat) {
-        button.layer.cornerRadius = diameter / 2
-        button.setShadow(radius: 0.2 * diameter, opacity: 0.05, offset: CGSize(width: 0, height: 0.15 * diameter))
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.widthAnchor.constraint(equalToConstant: diameter).isActive = true
-        button.heightAnchor.constraint(equalToConstant: diameter).isActive = true
-        button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
+        setupButtons()
     }
     
     func setupStackView() {
         view.addSubview(stackView)
-        stackView.anchor(top: nil, left: view.safeAreaLayoutGuide.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingLeft: 24, paddingBottom: 13, paddingRight: 24)
+        stackView.anchor(top: nil, left: view.safeAreaLayoutGuide.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.safeAreaLayoutGuide.rightAnchor, paddingLeft: 24, paddingBottom: 12, paddingRight: 24)
         stackView.addArrangedSubview(undoButton)
         stackView.addArrangedSubview(passButton)
         stackView.addArrangedSubview(superLikeButton)
         stackView.addArrangedSubview(likeButton)
         stackView.addArrangedSubview(boostButton)
+    }
+    
+    func setupButtons() {
+        let largeMultiplier: CGFloat = 66/414 //based on width of iPhone 8+
+        let smallMultiplier: CGFloat = 54/414 //based on width of iPhone 8+
+        configureButton(button: undoButton, diameterMultiplier: smallMultiplier)
+        configureButton(button: passButton, diameterMultiplier: largeMultiplier)
+        configureButton(button: superLikeButton, diameterMultiplier: smallMultiplier)
+        configureButton(button: likeButton, diameterMultiplier: largeMultiplier)
+        configureButton(button: boostButton, diameterMultiplier: smallMultiplier)
+    }
+    
+    func configureButton(button: PopBounceButton, diameterMultiplier: CGFloat) {
+        button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.widthAnchor.constraint(lessThanOrEqualTo: view.widthAnchor, multiplier: diameterMultiplier).isActive = true
+        button.widthAnchor.constraint(lessThanOrEqualTo: view.heightAnchor, multiplier: diameterMultiplier).isActive = true
+        button.heightAnchor.constraint(equalTo: button.widthAnchor).isActive = true
+    }
+    
+    override func viewDidLayoutSubviews() {
+        for button in stackView.subviews as! [PopBounceButton] {
+            let diameter = button.bounds.width
+            button.layer.cornerRadius = diameter / 2
+            button.setShadow(radius: 0.2 * diameter, opacity: 0.05, offset: CGSize(width: 0, height: 0.15 * diameter))
+        }
     }
     
     @objc func handleTap(_ sender: PopBounceButton) {
