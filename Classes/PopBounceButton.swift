@@ -9,27 +9,29 @@
 import UIKit
 import pop
 
-public class PopBounceButton: UIControl {
+open class PopBounceButton: UIControl {
     
-    //MARK: - Spring Animation Settings
+    //MARK: - Variables
     
-    public var springBounciness: CGFloat = 19
+    //MARK: Spring Animation Settings
     
-    public var springSpeed: CGFloat = 10
+    open var springBounciness: CGFloat = 19
     
-    public var springVelocity: CGFloat = 6
+    open var springSpeed: CGFloat = 10
     
-    public var cancelDuration: TimeInterval = 0.3
+    open var springVelocity: CGFloat = 6
     
-    //MARK: - Long Press Animation Settings
+    open var cancelDuration: TimeInterval = 0.3
     
-    public var scaleFactor: CGFloat = 0.7
+    //MARK: Long Press Animation Settings
     
-    public var scaleDuration: TimeInterval = 0.1
+    open var scaleFactor: CGFloat = 0.7
     
-    public var minimumPressDuration: TimeInterval = 0.2
+    open var scaleDuration: TimeInterval = 0.1
     
-    //MARK: - Title Configuration
+    open var minimumPressDuration: TimeInterval = 0.2
+    
+    //MARK: Title Configuration
     
     public var titleLabel: UILabel? {
         return button.titleLabel
@@ -67,7 +69,7 @@ public class PopBounceButton: UIControl {
         button.setTitleShadowColor(color, for: .normal)
     }
     
-    //MARK: - Presentation Configuration
+    //MARK: Presentation Configuration
     
     public var backgroundImage: UIImage? {
         return button.backgroundImage(for: .normal)
@@ -85,34 +87,34 @@ public class PopBounceButton: UIControl {
         button.setImage(image, for: .normal)
     }
     
-    public override var backgroundColor: UIColor? {
+    open override var backgroundColor: UIColor? {
         didSet {
             button.backgroundColor = backgroundColor
             super.backgroundColor = .clear
         }
     }
     
-    //MARK: - Edge Insets Configuration
+    //MARK: Edge Insets Configuration
     
-    public var contentEdgeInsets: UIEdgeInsets = .zero {
+    open var contentEdgeInsets: UIEdgeInsets = .zero {
         didSet {
             button.contentEdgeInsets = contentEdgeInsets
         }
     }
     
-    public var titleEdgeInsets: UIEdgeInsets = .zero {
+    open var titleEdgeInsets: UIEdgeInsets = .zero {
         didSet {
             button.titleEdgeInsets = titleEdgeInsets
         }
     }
     
-    public var imageEdgeInsets: UIEdgeInsets = .zero {
+    open var imageEdgeInsets: UIEdgeInsets = .zero {
         didSet {
             button.imageEdgeInsets = imageEdgeInsets
         }
     }
     
-    //MARK: - Dimensions
+    //MARK: Dimensions
     
     public func backgroundRect(forBounds bounds: CGRect) -> CGRect {
         return button.backgroundRect(forBounds: bounds)
@@ -130,7 +132,7 @@ public class PopBounceButton: UIControl {
         return button.imageRect(forContentRect: contentRect)
     }
     
-    //MARK: - Other Variables
+    //MARK: Other Variables
     
     private var button = UIButton(type: .custom)
     
@@ -138,11 +140,11 @@ public class PopBounceButton: UIControl {
         return button.imageView
     }
     
-    public override var layer: CALayer {
+    open override var layer: CALayer {
         return button.layer
     }
     
-    // MARK: -
+    // MARK: - Initialization
     
     public init() {
         super.init(frame: CGRect.zero)
@@ -161,33 +163,31 @@ public class PopBounceButton: UIControl {
     
     private func initialize() {
         backgroundColor = .white
-        initializeButton()
-    }
-    
-    private func initializeButton() {
-        button.isUserInteractionEnabled = false
-        button.layer.masksToBounds = true
-
         addTarget(self, action: #selector(handleTouchDown), for: .touchDown)
         addTarget(self, action: #selector(handleTouchUpInside), for: .touchUpInside)
         addTarget(self, action: #selector(handleTouchUpOutside), for: .touchUpOutside)
         
-        super.addSubview(button)
-        button.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
+        button.isUserInteractionEnabled = false
+        button.layer.masksToBounds = true
+        
+        addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        button.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        button.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        button.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
     }
     
-    public func setShadow(radius: CGFloat, opacity: Float, offset: CGSize = .zero, color: UIColor = UIColor.black) {
+    //MARK: - Customization
+    
+    open func setShadow(radius: CGFloat, opacity: Float, offset: CGSize = .zero, color: UIColor = UIColor.black) {
         super.layer.shadowRadius = radius
         super.layer.shadowOpacity = opacity
         super.layer.shadowOffset = offset
         super.layer.shadowColor = color.cgColor
     }
     
-   public override func addSubview(_ view: UIView) {
-        button.addSubview(view)
-    }
-    
-    //MARK: - Touch Handling Methods
+    //MARK: - Touch Handling
     
     private var isButtonScaled = false
     
@@ -199,7 +199,7 @@ public class PopBounceButton: UIControl {
         longPressTimer = Timer.scheduledTimer(timeInterval: minimumPressDuration, target: self, selector: #selector(handleScale), userInfo: nil, repeats: false)
     }
     
-    public override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+    open override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         let touchPoint = touch.location(in: self)
         if !bounds.contains(touchPoint) && !isButtonScaled {
             handleScale()
@@ -235,7 +235,7 @@ public class PopBounceButton: UIControl {
         isButtonScaled = false
     }
     
-    //MARK: - Animation Methods
+    //MARK: - Animation
     
     @objc private func springAnimation(delay: TimeInterval = 0, velocity: CGSize = CGSize.zero) {
         button.pop_removeAllAnimations()
@@ -266,7 +266,7 @@ public class PopBounceButton: UIControl {
         button.pop_add(scaleAnim, forKey: "cancelSpringAnimation")
     }
     
-    public func removeAllAnimations() {
+    open func removeAllAnimations() {
         button.layer.pop_removeAllAnimations()
     }
     
