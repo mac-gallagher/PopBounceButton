@@ -1,7 +1,13 @@
 # PopBounceButton
-A highly-customizable animated button built with Facebook's Pop animation library. Inspired by the familiar button stack from Tinder.
+![Swift-Version](https://img.shields.io/badge/Swift-4.1-orange.svg)
+![CocoaPods](https://img.shields.io/cocoapods/v/PopBounceButton.svg)
+![license](https://img.shields.io/cocoapods/l/PopBounceButton.svg)
+![CocoaPods](https://img.shields.io/cocoapods/p/PopBounceButton.svg)
 
-![TinderDemo](https://raw.githubusercontent.com/mac-gallagher/PopBounceButton/master/Screenshots/tinder_demo.gif)
+A customizable animated button built with Facebook's Pop animation library. Inspired by the familiar button stack from Tinder.
+
+
+![TinderDemo](https://raw.githubusercontent.com/mac-gallagher/PopBounceButton/master/Images/tinder_demo.gif)
 
 ## Features
 * Lightweight and highly customizable
@@ -13,14 +19,12 @@ A highly-customizable animated button built with Facebook's Pop animation librar
 ### CocoaPods
 PopBounceButton is available through [CocoaPods](<https://cocoapods.org/>). To install it, simply add the following line to your `Podfile`:
 
-	pod 'PopBounceButton', '~> 1.0'
+	pod 'PopBounceButton'
 
 
 ### Manual
-1. Download and drop the `Sources` directory into your project. 
-2. Install Facebook's [Pop](<https://github.com/facebook/pop>) library via CocoaPods by adding the following line to your `Podfile`: 
-
-	    pod 'pop', '~> 1.0'
+1. Download and drop `PopBounceButton.swift` into your project. 
+2. Install Facebook's [Pop](<https://github.com/facebook/pop>) library.
 
 ## Usage
 
@@ -44,7 +48,7 @@ PopBounceButton is available through [CocoaPods](<https://cocoapods.org/>). To i
     ```
 
 ## Customization
-Since PopBounceButton is esentially a UIButton wrapper, you can customize your PopBounceButton in the same way you would customize a UIButton (the one exception is adding shadows, see below). You can also customize the animations to suit your specific project needs.
+Since PopBounceButton is essentially a UIButton wrapper, it can be customized in exactly the same manner (the only exception is adding shadows, see below). You can also customize the animations to suit your project's needs.
 
 ### Animation Settings
 
@@ -52,24 +56,23 @@ Attribute  | Description
 |:------------- |:-------------
 `springBounciness`  | The effective bounciness of the spring animation. Higher values increase spring movement range resulting in more oscillations and springiness. Defined as a value in the range [0, 20]. Defaults to 19.
 `springSpeed`   | The effective speed of the spring animation. Higher values increase the dampening power of the spring. Defined as a value in the range [0, 20]. Defaults to 10.
-`springVelocity`   | The initial velocity of the spring animation. Higher values increase the percieved force from the user's touch. Expressed in scale factor per second. Defaults to 6. **NOTE:** This attribute is dependent on the current values for `springBounciness` and `springSpeed`.
+`springVelocity`   | The initial velocity of the spring animation. Higher values increase the percieved force from the user's touch. Expressed in scale factor per second. Defaults to 6.
 `cancelDuration`   | The total duration of the scale animation performed after a `touchUpOutside` event is recognized. Expressed in seconds. Defaults to 0.3.
-`scaleFactor`   | The factor by which to scale the button after a long-press is recognized. Defaults to 0.7.
-`scaleDuration`   | The total duration of the scale animation performed after a long-press is recognized. Expressed in seconds. Defaults to 0.1.
+`scaleFactor`   | The factor by which to scale the button after a long-press has been recognized. Defaults to 0.7.
+`scaleDuration`   | The total duration of the scale animation performed after a long-press has been recognized. Expressed in seconds. Defaults to 0.1.
 `minimumPressDuration`   | The minimum period fingers must press on the button for a long-press to be recognized. Expressed in seconds. Defaults to 0.2.
  
 ### Setting a shadow
-The only property that cannot be modified directly (via its layer) is the button's shadow. To add a shadow to your PopBounceButton, call the `setShadow` function (see example below). **NOTE:** Modifying the button's shadow directly will have no visible effect.
-
+The only property that cannot be modified directly (via its layer) is the button's shadow. To add a shadow to your PopBounceButton, call the `setShadow` function (see example below).
 ### Example
 The code below produces the following output:
 
-![MessageButtonExample](https://raw.githubusercontent.com/mac-gallagher/PopBounceButton/master/Screenshots/example.gif)
+![MessageButtonExample](https://raw.githubusercontent.com/mac-gallagher/PopBounceButton/master/Images/example.gif)
 
 ```swift
 //Initialize button
 let button = PopBounceButton()
-button.frame = CGRect(x: 50, y: 100, width: 200, height: 50)
+button.frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 50))
 view.addSubview(button)
 
 //Customize animations
@@ -88,7 +91,7 @@ button.titleEdgeInsets = UIEdgeInsets(top: 0, left: -70, bottom: 0, right: 0)
 
 //Customize layer
 button.layer.cornerRadius = button.frame.height / 2
-button.setShadow(radius: 5, opacity: 0.3, offset: CGSize(width: 0, height: 3), color: UIColor.black.cgColor)
+button.setShadow(radius: 5, opacity: 0.3, offset: CGSize(width: 0, height: 3), color: .black)
 
 //Add gradient layer 
 let greenColor = UIColor(red: 39/255, green: 216/255, blue: 91/255, alpha: 1).cgColor
