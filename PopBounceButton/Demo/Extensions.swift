@@ -1,6 +1,6 @@
 //
-//  Utilities.swift
-//  PopBounceButton
+//  Extensions.swift
+//  Demo
 //
 //  Created by Mac Gallagher on 6/14/18.
 //  Copyright © 2018 Mac Gallagher. All rights reserved.
@@ -34,4 +34,11 @@ extension UIView {
         }
     }
     
+}
+
+extension Float {
+    func rounded(toPlaces places: Int) -> Float {
+        let divisor = pow(10.0, Float(places))
+        return (self * divisor).rounded() / divisor
+    }
 }

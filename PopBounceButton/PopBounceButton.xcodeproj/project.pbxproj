@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD10928220E20564000BAF0D /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7436F920D2C1F8007F3F30 /* UIView+Anchor.swift */; };
+		AD10928220E20564000BAF0D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7436F920D2C1F8007F3F30 /* Extensions.swift */; };
 		AD244E0E20BA61FC0038881D /* PopBounceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD244E0C20BA61FC0038881D /* PopBounceButton.swift */; };
 		AD244E0F20BA63B50038881D /* PopBounceButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD35E79620B90777000D6175 /* PopBounceButton.framework */; };
 		AD244E1020BA63B50038881D /* PopBounceButton.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD35E79620B90777000D6175 /* PopBounceButton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -17,6 +17,7 @@
 		AD35E7BC20B9087E000D6175 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35E7B920B9087E000D6175 /* AnimationViewController.swift */; };
 		AD35E7BD20B9087E000D6175 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35E7BA20B9087E000D6175 /* TableViewController.swift */; };
 		AD35E7BE20B9087E000D6175 /* TinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35E7BB20B9087E000D6175 /* TinderViewController.swift */; };
+		ADEDF8C420E4683300DB4A8C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEDF8C320E4683300DB4A8C /* Utilities.swift */; };
 		D43DA4AA510F56968AEB38F1 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B175EE380F09AC4582659A /* Pods_Demo.framework */; };
 		FF79CBA3EDF00EC8F30A96C9 /* Pods_PopBounceButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF168DEF4060BBFC17FD399 /* Pods_PopBounceButton.framework */; };
 /* End PBXBuildFile section */
@@ -60,7 +61,8 @@
 		AD35E7B920B9087E000D6175 /* AnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		AD35E7BA20B9087E000D6175 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		AD35E7BB20B9087E000D6175 /* TinderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinderViewController.swift; sourceTree = "<group>"; };
-		AD7436F920D2C1F8007F3F30 /* UIView+Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
+		AD7436F920D2C1F8007F3F30 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ADEDF8C320E4683300DB4A8C /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		BD328498257F802BCEB055D4 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		EE026E5B86AD2B6BA4358CEF /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		FAF168DEF4060BBFC17FD399 /* Pods_PopBounceButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PopBounceButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,7 +154,8 @@
 				AD35E7B920B9087E000D6175 /* AnimationViewController.swift */,
 				AD35E7BA20B9087E000D6175 /* TableViewController.swift */,
 				AD35E7BB20B9087E000D6175 /* TinderViewController.swift */,
-				AD7436F920D2C1F8007F3F30 /* UIView+Anchor.swift */,
+				AD7436F920D2C1F8007F3F30 /* Extensions.swift */,
+				ADEDF8C320E4683300DB4A8C /* Utilities.swift */,
 				AD35E7B020B90821000D6175 /* Assets.xcassets */,
 				AD35E7B220B90821000D6175 /* LaunchScreen.storyboard */,
 				AD6FD5F120E34044007A4FBA /* Supporting Files */,
@@ -340,10 +343,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADEDF8C420E4683300DB4A8C /* Utilities.swift in Sources */,
 				AD35E7BC20B9087E000D6175 /* AnimationViewController.swift in Sources */,
 				AD35E7BE20B9087E000D6175 /* TinderViewController.swift in Sources */,
 				AD35E7AA20B90820000D6175 /* AppDelegate.swift in Sources */,
-				AD10928220E20564000BAF0D /* UIView+Anchor.swift in Sources */,
+				AD10928220E20564000BAF0D /* Extensions.swift in Sources */,
 				AD35E7BD20B9087E000D6175 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
