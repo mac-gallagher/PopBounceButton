@@ -1,22 +1,25 @@
 Pod::Spec.new do |s|
 
   s.name         = "PopBounceButton"
-  s.version      = "1.1.0"
-  s.summary      = "A highly-customizable animated button inspired by the familiar button stack from Tinder."
+  s.version      = "1.1.1"
+  s.platform     = :ios, "9.0"
+  s.summary      = "A customizable animated button inspired by the familiar button stack from Tinder."
+
   s.description  = <<-DESC
-A highly-customizable animated button built with Facebook's Pop animation library. Inspired by the familiar button stack from Tinder.
+A customizable animated button built with Facebook's Pop animation library. Inspired by the familiar button stack from Tinder.
                    DESC
+
   s.homepage     = "https://github.com/mac-gallagher/PopBounceButton"
-  s.screenshots  = ["https://raw.githubusercontent.com/mac-gallagher/PopBounceButton/master/Screenshots/example.gif",
-                    "https://raw.githubusercontent.com/mac-gallagher/PopBounceButton/master/Screenshots/tinder_demo.gif"]
+  s.screenshots  = ["https://raw.githubusercontent.com/mac-gallagher/PopBounceButton/master/Images/example.gif",
+                    "https://raw.githubusercontent.com/mac-gallagher/PopBounceButton/master/Images/tinder_demo.gif"]
   s.documentation_url = "https://github.com/mac-gallagher/PopBounceButton/tree/master/README.md"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author             = { "Mac Gallagher" => "jmgallagher36@gmail.com" }
-  s.platform     = :ios, "9.0"
-  s.source       = { :git => "https://github.com/mac-gallagher/PopBounceButton.git", :tag => "1.1.0" }
-  s.source_files = "Sources/**/*"
+  s.source       = { :git => "https://github.com/mac-gallagher/PopBounceButton.git", :tag => "v1.1.1" }
+
   s.swift_version = "4.1"
-  s.framework    = "UIKit", "pop"
+  s.source_files = "PopBounceButton/Classes/**/*"
+
   s.dependency "pop", "~> 1.0"
 
 end
