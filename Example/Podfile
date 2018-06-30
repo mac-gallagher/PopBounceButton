@@ -1,0 +1,5 @@
+use_frameworks!
+
+target 'PopBounceButton_Example' do
+    pod 'PopBounceButton', :path => '../'
+end

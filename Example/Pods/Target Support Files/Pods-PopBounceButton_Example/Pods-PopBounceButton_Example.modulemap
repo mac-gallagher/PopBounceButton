@@ -1,0 +1,6 @@
+framework module Pods_PopBounceButton_Example {
+  umbrella header "Pods-PopBounceButton_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

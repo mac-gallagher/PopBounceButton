@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5AD4D457F7BBA33ACFAEA8F6 /* Pods_PopBounceButton_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FAAEAA16BD09A8C1B4D752 /* Pods_PopBounceButton_Example.framework */; };
+		AD480E4820E6E78D00E42B72 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = AD480E4520E6E78D00E42B72 /* LICENSE */; };
+		AD480E4920E6E78D00E42B72 /* PopBounceButton.podspec in Resources */ = {isa = PBXBuildFile; fileRef = AD480E4620E6E78D00E42B72 /* PopBounceButton.podspec */; };
+		AD480E4A20E6E78D00E42B72 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AD480E4720E6E78D00E42B72 /* README.md */; };
+		AD7AB77020E6E62900ED965D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD7AB76F20E6E62900ED965D /* Assets.xcassets */; };
+		AD7AB77320E6E62900ED965D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7AB77120E6E62900ED965D /* LaunchScreen.storyboard */; };
+		AD7AB78020E6E6A800ED965D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AB77A20E6E6A700ED965D /* TableViewController.swift */; };
+		AD7AB78120E6E6A800ED965D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AB77B20E6E6A800ED965D /* AppDelegate.swift */; };
+		AD7AB78220E6E6A800ED965D /* TinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AB77C20E6E6A800ED965D /* TinderViewController.swift */; };
+		AD7AB78320E6E6A800ED965D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AB77D20E6E6A800ED965D /* Extensions.swift */; };
+		AD7AB78420E6E6A800ED965D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AB77E20E6E6A800ED965D /* Utilities.swift */; };
+		AD7AB78520E6E6A800ED965D /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AB77F20E6E6A800ED965D /* AnimationViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		33FAAEAA16BD09A8C1B4D752 /* Pods_PopBounceButton_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PopBounceButton_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93216453183ECE8BB9838CFA /* Pods-PopBounceButton_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopBounceButton_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PopBounceButton_Example/Pods-PopBounceButton_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		A568A31BE4542EAF5C68EBBC /* Pods-PopBounceButton_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopBounceButton_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-PopBounceButton_Example/Pods-PopBounceButton_Example.release.xcconfig"; sourceTree = "<group>"; };
+		AD480E4520E6E78D00E42B72 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		AD480E4620E6E78D00E42B72 /* PopBounceButton.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PopBounceButton.podspec; path = ../PopBounceButton.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AD480E4720E6E78D00E42B72 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		AD7AB76520E6E62800ED965D /* PopBounceButton_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopBounceButton_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD7AB76F20E6E62900ED965D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD7AB77220E6E62900ED965D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AD7AB77420E6E62900ED965D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD7AB77A20E6E6A700ED965D /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		AD7AB77B20E6E6A800ED965D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AD7AB77C20E6E6A800ED965D /* TinderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinderViewController.swift; sourceTree = "<group>"; };
+		AD7AB77D20E6E6A800ED965D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AD7AB77E20E6E6A800ED965D /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		AD7AB77F20E6E6A800ED965D /* AnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD7AB76220E6E62800ED965D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AD4D457F7BBA33ACFAEA8F6 /* Pods_PopBounceButton_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24ACDBE5E6E523ADD2D414D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93216453183ECE8BB9838CFA /* Pods-PopBounceButton_Example.debug.xcconfig */,
+				A568A31BE4542EAF5C68EBBC /* Pods-PopBounceButton_Example.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AD480E4320E6E71300E42B72 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AD7AB77420E6E62900ED965D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD480E4420E6E76600E42B72 /* Podspec Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				AD480E4620E6E78D00E42B72 /* PopBounceButton.podspec */,
+				AD480E4720E6E78D00E42B72 /* README.md */,
+				AD480E4520E6E78D00E42B72 /* LICENSE */,
+			);
+			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		AD7AB75C20E6E62800ED965D = {
+			isa = PBXGroup;
+			children = (
+				AD480E4420E6E76600E42B72 /* Podspec Metadata */,
+				AD7AB76720E6E62800ED965D /* Example for PopBounceButton */,
+				AD7AB76620E6E62800ED965D /* Products */,
+				24ACDBE5E6E523ADD2D414D9 /* Pods */,
+				B0EE3BECBE3FFCFC5BD6AD7F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AD7AB76620E6E62800ED965D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD7AB76520E6E62800ED965D /* PopBounceButton_Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD7AB76720E6E62800ED965D /* Example for PopBounceButton */ = {
+			isa = PBXGroup;
+			children = (
+				AD7AB77B20E6E6A800ED965D /* AppDelegate.swift */,
+				AD7AB77F20E6E6A800ED965D /* AnimationViewController.swift */,
+				AD7AB77D20E6E6A800ED965D /* Extensions.swift */,
+				AD7AB77A20E6E6A700ED965D /* TableViewController.swift */,
+				AD7AB77C20E6E6A800ED965D /* TinderViewController.swift */,
+				AD7AB77E20E6E6A800ED965D /* Utilities.swift */,
+				AD7AB76F20E6E62900ED965D /* Assets.xcassets */,
+				AD7AB77120E6E62900ED965D /* LaunchScreen.storyboard */,
+				AD480E4320E6E71300E42B72 /* Supporting Files */,
+			);
+			name = "Example for PopBounceButton";
+			path = PopBounceButton;
+			sourceTree = "<group>";
+		};
+		B0EE3BECBE3FFCFC5BD6AD7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33FAAEAA16BD09A8C1B4D752 /* Pods_PopBounceButton_Example.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD7AB76420E6E62800ED965D /* PopBounceButton_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD7AB77720E6E62900ED965D /* Build configuration list for PBXNativeTarget "PopBounceButton_Example" */;
+			buildPhases = (
+				7A042143AFFD0743A9F38231 /* [CP] Check Pods Manifest.lock */,
+				AD7AB76120E6E62800ED965D /* Sources */,
+				AD7AB76220E6E62800ED965D /* Frameworks */,
+				AD7AB76320E6E62800ED965D /* Resources */,
+				A50D1119B2EACAC2859AA602 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PopBounceButton_Example;
+			productName = PopBounceButton;
+			productReference = AD7AB76520E6E62800ED965D /* PopBounceButton_Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD7AB75D20E6E62800ED965D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Mac Gallagher";
+				TargetAttributes = {
+					AD7AB76420E6E62800ED965D = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
+				};
+			};
+			buildConfigurationList = AD7AB76020E6E62800ED965D /* Build configuration list for PBXProject "PopBounceButton" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD7AB75C20E6E62800ED965D;
+			productRefGroup = AD7AB76620E6E62800ED965D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD7AB76420E6E62800ED965D /* PopBounceButton_Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD7AB76320E6E62800ED965D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD480E4820E6E78D00E42B72 /* LICENSE in Resources */,
+				AD7AB77320E6E62900ED965D /* LaunchScreen.storyboard in Resources */,
+				AD480E4A20E6E78D00E42B72 /* README.md in Resources */,
+				AD480E4920E6E78D00E42B72 /* PopBounceButton.podspec in Resources */,
+				AD7AB77020E6E62900ED965D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7A042143AFFD0743A9F38231 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PopBounceButton_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A50D1119B2EACAC2859AA602 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PopBounceButton_Example/Pods-PopBounceButton_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PopBounceButton/PopBounceButton.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopBounceButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PopBounceButton_Example/Pods-PopBounceButton_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD7AB76120E6E62800ED965D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD7AB78120E6E6A800ED965D /* AppDelegate.swift in Sources */,
+				AD7AB78020E6E6A800ED965D /* TableViewController.swift in Sources */,
+				AD7AB78220E6E6A800ED965D /* TinderViewController.swift in Sources */,
+				AD7AB78520E6E6A800ED965D /* AnimationViewController.swift in Sources */,
+				AD7AB78420E6E6A800ED965D /* Utilities.swift in Sources */,
+				AD7AB78320E6E6A800ED965D /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AD7AB77120E6E62900ED965D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD7AB77220E6E62900ED965D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AD7AB77520E6E62900ED965D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AD7AB77620E6E62900ED965D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD7AB77820E6E62900ED965D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93216453183ECE8BB9838CFA /* Pods-PopBounceButton_Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DYZ8Y2U8DB;
+				INFOPLIST_FILE = PopBounceButton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.macgallagher.PopBounceButton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD7AB77920E6E62900ED965D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A568A31BE4542EAF5C68EBBC /* Pods-PopBounceButton_Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DYZ8Y2U8DB;
+				INFOPLIST_FILE = PopBounceButton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.macgallagher.PopBounceButton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD7AB76020E6E62800ED965D /* Build configuration list for PBXProject "PopBounceButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD7AB77520E6E62900ED965D /* Debug */,
+				AD7AB77620E6E62900ED965D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD7AB77720E6E62900ED965D /* Build configuration list for PBXNativeTarget "PopBounceButton_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD7AB77820E6E62900ED965D /* Debug */,
+				AD7AB77920E6E62900ED965D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AD7AB75D20E6E62800ED965D /* Project object */;
+}

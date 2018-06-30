@@ -1,0 +1,23 @@
+PODS:
+  - pop (1.0.10)
+  - PopBounceButton (1.1.0):
+    - pop (~> 1.0)
+
+DEPENDENCIES:
+  - PopBounceButton (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - pop
+
+EXTERNAL SOURCES:
+  PopBounceButton:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  PopBounceButton: 4950252c675ca1ee94071eaad8a1ed266076a6ca
+
+PODFILE CHECKSUM: af2d780f4fb227f8cee3a85b52dfdaa1b7309d80
+
+COCOAPODS: 1.5.0
