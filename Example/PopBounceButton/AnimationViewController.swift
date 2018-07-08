@@ -37,17 +37,11 @@ class AnimationViewController: UIViewController {
     //MARK: Labels
     
     let bouncinessLabel = ResizingLabel()
-
     let speedLabel = ResizingLabel()
-    
     let velocityLabel = ResizingLabel()
-    
     let cancelDurationLabel = ResizingLabel()
-    
     let scaleFactorLabel = ResizingLabel()
-    
     let scaleDurationLabel = ResizingLabel()
-    
     let minimumLongPressDurationLabel = ResizingLabel()
     
     //MARK: Sliders

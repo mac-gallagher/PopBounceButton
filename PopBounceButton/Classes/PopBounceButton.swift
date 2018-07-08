@@ -79,6 +79,10 @@ open class PopBounceButton: UIControl {
         return button.setBackgroundImage(image, for: .normal)
     }
     
+    public var imageView: UIImageView? {
+        return button.imageView
+    }
+    
     public var image: UIImage? {
         return button.image(for: .normal)
     }
@@ -136,10 +140,6 @@ open class PopBounceButton: UIControl {
     
     private var button = UIButton(type: .custom)
     
-    public var imageView: UIImageView? {
-        return button.imageView
-    }
-    
     open override var layer: CALayer {
         return button.layer
     }
@@ -163,14 +163,20 @@ open class PopBounceButton: UIControl {
     
     private func initialize() {
         backgroundColor = .white
+        layer.masksToBounds = true
+        addTargets()
+        performLayout()
+    }
+    
+    private func addTargets() {
         addTarget(self, action: #selector(handleTouchDown), for: .touchDown)
         addTarget(self, action: #selector(handleTouchUpInside), for: .touchUpInside)
         addTarget(self, action: #selector(handleTouchUpOutside), for: .touchUpOutside)
-        
-        button.isUserInteractionEnabled = false
-        button.layer.masksToBounds = true
-        
+    }
+    
+    private func performLayout() {
         addSubview(button)
+        button.isUserInteractionEnabled = false
         button.translatesAutoresizingMaskIntoConstraints = false
         button.topAnchor.constraint(equalTo: topAnchor).isActive = true
         button.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
@@ -219,7 +225,7 @@ open class PopBounceButton: UIControl {
         } else {
             let velocityFactor = -button.frame.width / frame.width
             let velocity = CGSize(width: velocityFactor * springVelocity, height: velocityFactor * springVelocity)
-            springAnimation(velocity: velocity)
+            springAnimation(initialVelocity: velocity)
         }
         resetButton()
     }
@@ -237,7 +243,7 @@ open class PopBounceButton: UIControl {
     
     //MARK: - Animation
     
-    @objc private func springAnimation(delay: TimeInterval = 0, velocity: CGSize = CGSize.zero) {
+    @objc private func springAnimation(delay: TimeInterval = 0, initialVelocity: CGSize = CGSize.zero) {
         button.pop_removeAllAnimations()
         guard let springAnim = POPSpringAnimation(propertyNamed: kPOPViewScaleXY) else { return }
         springAnim.fromValue = NSValue(cgSize: CGSize(width: button.frame.width / frame.width - 0.001, height: button.frame.height / frame.height - 0.001))
@@ -245,8 +251,8 @@ open class PopBounceButton: UIControl {
         springAnim.springBounciness = springBounciness
         springAnim.springSpeed = springSpeed
         springAnim.beginTime = CACurrentMediaTime() + delay
-        if velocity != CGSize.zero {
-            springAnim.velocity = velocity
+        if initialVelocity != CGSize.zero {
+            springAnim.velocity = initialVelocity
         }
         button.pop_add(springAnim, forKey: "springAnimation")
     }

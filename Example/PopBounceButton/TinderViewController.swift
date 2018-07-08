@@ -20,36 +20,41 @@ class TinderViewController: UIViewController {
         return sv
     }()
     
-    let undoButton: PopBounceButton = {
+    lazy var undoButton: PopBounceButton = {
         let button = PopBounceButton()
+        button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
         button.setImage(#imageLiteral(resourceName: "undo"))
         button.tag = 1
         return button
     }()
     
-    let passButton: PopBounceButton = {
+    lazy var passButton: PopBounceButton = {
         let button = PopBounceButton()
+        button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
         button.setImage(#imageLiteral(resourceName: "pass"))
         button.tag = 2
         return button
     }()
     
-    let superLikeButton: PopBounceButton = {
+    lazy var superLikeButton: PopBounceButton = {
         let button = PopBounceButton()
+        button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
         button.setImage(#imageLiteral(resourceName: "star"))
         button.tag = 3
         return button
     }()
     
-    let likeButton: PopBounceButton = {
+    lazy var likeButton: PopBounceButton = {
         let button = PopBounceButton()
+        button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
         button.setImage(#imageLiteral(resourceName: "heart"))
         button.tag = 4
         return button
     }()
     
-    let boostButton: PopBounceButton = {
+    lazy var boostButton: PopBounceButton = {
         let button = PopBounceButton()
+        button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
         button.setImage(#imageLiteral(resourceName: "lightning"))
         button.tag = 5
         return button
@@ -78,15 +83,14 @@ class TinderViewController: UIViewController {
     func setupButtons() {
         let largeMultiplier: CGFloat = 66/414 //based on width of iPhone 8+
         let smallMultiplier: CGFloat = 54/414 //based on width of iPhone 8+
-        configureButton(button: undoButton, diameterMultiplier: smallMultiplier)
-        configureButton(button: passButton, diameterMultiplier: largeMultiplier)
-        configureButton(button: superLikeButton, diameterMultiplier: smallMultiplier)
-        configureButton(button: likeButton, diameterMultiplier: largeMultiplier)
-        configureButton(button: boostButton, diameterMultiplier: smallMultiplier)
+        layoutButton(button: undoButton, diameterMultiplier: smallMultiplier)
+        layoutButton(button: passButton, diameterMultiplier: largeMultiplier)
+        layoutButton(button: superLikeButton, diameterMultiplier: smallMultiplier)
+        layoutButton(button: likeButton, diameterMultiplier: largeMultiplier)
+        layoutButton(button: boostButton, diameterMultiplier: smallMultiplier)
     }
     
-    func configureButton(button: PopBounceButton, diameterMultiplier: CGFloat) {
-        button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
+    func layoutButton(button: PopBounceButton, diameterMultiplier: CGFloat) {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.widthAnchor.constraint(lessThanOrEqualTo: view.widthAnchor, multiplier: diameterMultiplier).isActive = true
         button.widthAnchor.constraint(lessThanOrEqualTo: view.heightAnchor, multiplier: diameterMultiplier).isActive = true
