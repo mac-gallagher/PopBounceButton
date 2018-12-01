@@ -9,9 +9,7 @@
 import UIKit
 import PopBounceButton
 
-class TinderViewController: UIViewController {
-    
-    //MARK: - Subviews
+class TinderDemoViewController: UIViewController {
     
     let stackView: UIStackView = {
         let sv = UIStackView()
@@ -23,7 +21,7 @@ class TinderViewController: UIViewController {
     lazy var undoButton: PopBounceButton = {
         let button = PopBounceButton()
         button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
-        button.setImage(#imageLiteral(resourceName: "undo"))
+//        button.setImage(#imageLiteral(resourceName: "undo"))
         button.tag = 1
         return button
     }()
@@ -31,7 +29,7 @@ class TinderViewController: UIViewController {
     lazy var passButton: PopBounceButton = {
         let button = PopBounceButton()
         button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
-        button.setImage(#imageLiteral(resourceName: "pass"))
+//        button.setImage(#imageLiteral(resourceName: "pass"))
         button.tag = 2
         return button
     }()
@@ -39,7 +37,7 @@ class TinderViewController: UIViewController {
     lazy var superLikeButton: PopBounceButton = {
         let button = PopBounceButton()
         button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
-        button.setImage(#imageLiteral(resourceName: "star"))
+//        button.setImage(#imageLiteral(resourceName: "star"))
         button.tag = 3
         return button
     }()
@@ -47,7 +45,7 @@ class TinderViewController: UIViewController {
     lazy var likeButton: PopBounceButton = {
         let button = PopBounceButton()
         button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
-        button.setImage(#imageLiteral(resourceName: "heart"))
+//        button.setImage(#imageLiteral(resourceName: "heart"))
         button.tag = 4
         return button
     }()
@@ -55,12 +53,14 @@ class TinderViewController: UIViewController {
     lazy var boostButton: PopBounceButton = {
         let button = PopBounceButton()
         button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
-        button.setImage(#imageLiteral(resourceName: "lightning"))
+//        button.setImage(#imageLiteral(resourceName: "lightning"))
         button.tag = 5
         return button
     }()
     
     //MARK: - Methods
+    
+    //add button shadows viewDidLayoutSubviews
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,7 +101,7 @@ class TinderViewController: UIViewController {
         for button in stackView.subviews as! [PopBounceButton] {
             let diameter = button.bounds.width
             button.layer.cornerRadius = diameter / 2
-            button.setShadow(radius: 0.2 * diameter, opacity: 0.05, offset: CGSize(width: 0, height: 0.15 * diameter))
+//            button.setShadow(radius: 0.2 * diameter, opacity: 0.05, offset: CGSize(width: 0, height: 0.15 * diameter))
         }
     }
     
@@ -121,8 +121,15 @@ class TinderViewController: UIViewController {
             break
         }
     }
-    
 }
+
+//    open func setShadow(radius: CGFloat, opacity: Float, offset: CGSize = .zero, color: UIColor = UIColor.black) {
+//        super.layer.shadowRadius = radius
+//        super.layer.shadowOpacity = opacity
+//        super.layer.shadowOffset = offset
+//        super.layer.shadowColor = color.cgColor
+//    }
+//
 
 
 

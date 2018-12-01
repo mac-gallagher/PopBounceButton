@@ -9,7 +9,7 @@
 import UIKit
 import PopBounceButton
 
-class AnimationViewController: UIViewController {
+class AnimationDemoViewController: UIViewController {
     
     //MARK: - Subviews
     
@@ -27,8 +27,9 @@ class AnimationViewController: UIViewController {
     }()
     
     let button: PopBounceButton = {
-        let button = PopBounceButton()
+        let button = PopBounceButton(type: UIButton.ButtonType.roundedRect)
         button.backgroundColor = .orange
+        button.layer.masksToBounds = true
         return button
     }()
     
@@ -165,13 +166,13 @@ class AnimationViewController: UIViewController {
     //MARK: Button/Slider Handling
     
     @objc func reset() {
-        button.removeAllAnimations()
+//        button.removeAllAnimations()
         button.springBounciness = defaultButton.springBounciness
         button.springSpeed = defaultButton.springSpeed
         button.springVelocity = defaultButton.springVelocity
         button.cancelDuration = defaultButton.cancelDuration
-        button.scaleFactor = defaultButton.scaleFactor
-        button.scaleDuration = defaultButton.scaleDuration
+        button.longPressScaleFactor = defaultButton.longPressScaleFactor
+        button.longPressScaleDuration = defaultButton.longPressScaleDuration
         button.minimumPressDuration = defaultButton.minimumPressDuration
         
         updateLabels()
@@ -183,8 +184,8 @@ class AnimationViewController: UIViewController {
         speedLabel.text = "Speed = \(Int(button.springSpeed))"
         velocityLabel.text = "Velocity = \(Int(button.springVelocity))"
         cancelDurationLabel.text = "Cancel Duration = " + String(format: "%.2f", button.cancelDuration) + " s"
-        scaleFactorLabel.text = "Scale Factor = " + String(format: "%.2f", button.scaleFactor)
-        scaleDurationLabel.text = "Scale Duration = " + String(format: "%.2f", button.scaleDuration) + " s"
+        scaleFactorLabel.text = "Scale Factor = " + String(format: "%.2f", button.longPressScaleFactor)
+        scaleDurationLabel.text = "Scale Duration = " + String(format: "%.2f", button.longPressScaleDuration) + " s"
         minimumLongPressDurationLabel.text = "Min Press Duration = " + String(format: "%.2f", button.minimumPressDuration) + " s"
     }
     
@@ -193,8 +194,8 @@ class AnimationViewController: UIViewController {
         speedSlider.setValue(Float(button.springSpeed), animated: true)
         velocitySlider.setValue(Float(button.springVelocity), animated: true)
         cancelDurationSlider.setValue(Float(button.cancelDuration), animated: true)
-        scaleFactorSlider.setValue(Float(button.scaleFactor), animated: true)
-        scaleDurationSlider.setValue(Float(button.scaleDuration), animated: true)
+        scaleFactorSlider.setValue(Float(button.longPressScaleFactor), animated: true)
+        scaleDurationSlider.setValue(Float(button.longPressScaleDuration), animated: true)
         minimumLongPressDurationSlider.setValue(Float(button.minimumPressDuration), animated: true)
     }
     
@@ -209,9 +210,9 @@ class AnimationViewController: UIViewController {
         case 4:
             button.cancelDuration = TimeInterval(sender.value.rounded(toPlaces: 2))
         case 5:
-            button.scaleFactor = CGFloat(sender.value.rounded(toPlaces: 2))
+            button.longPressScaleFactor = CGFloat(sender.value.rounded(toPlaces: 2))
         case 6:
-            button.scaleDuration = TimeInterval(sender.value.rounded(toPlaces: 2))
+            button.longPressScaleDuration = TimeInterval(sender.value.rounded(toPlaces: 2))
         case 7:
             button.minimumPressDuration = TimeInterval(sender.value.rounded(toPlaces: 2))
         default:
@@ -220,5 +221,4 @@ class AnimationViewController: UIViewController {
         updateLabels()
         updateSliders()
     }
-    
 }

@@ -8,23 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		5AD4D457F7BBA33ACFAEA8F6 /* Pods_PopBounceButton_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FAAEAA16BD09A8C1B4D752 /* Pods_PopBounceButton_Example.framework */; };
+		AD3CCB1221B1E49300A5886E /* Float+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3CCB1121B1E49300A5886E /* Float+Helpers.swift */; };
 		AD480E4820E6E78D00E42B72 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = AD480E4520E6E78D00E42B72 /* LICENSE */; };
 		AD480E4920E6E78D00E42B72 /* PopBounceButton.podspec in Resources */ = {isa = PBXBuildFile; fileRef = AD480E4620E6E78D00E42B72 /* PopBounceButton.podspec */; };
 		AD480E4A20E6E78D00E42B72 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AD480E4720E6E78D00E42B72 /* README.md */; };
 		AD7AB77020E6E62900ED965D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD7AB76F20E6E62900ED965D /* Assets.xcassets */; };
 		AD7AB77320E6E62900ED965D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7AB77120E6E62900ED965D /* LaunchScreen.storyboard */; };
-		AD7AB78020E6E6A800ED965D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AB77A20E6E6A700ED965D /* TableViewController.swift */; };
+		AD7AB78020E6E6A800ED965D /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AB77A20E6E6A700ED965D /* DemoViewController.swift */; };
 		AD7AB78120E6E6A800ED965D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AB77B20E6E6A800ED965D /* AppDelegate.swift */; };
-		AD7AB78220E6E6A800ED965D /* TinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AB77C20E6E6A800ED965D /* TinderViewController.swift */; };
-		AD7AB78320E6E6A800ED965D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AB77D20E6E6A800ED965D /* Extensions.swift */; };
+		AD7AB78220E6E6A800ED965D /* TinderDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AB77C20E6E6A800ED965D /* TinderDemoViewController.swift */; };
+		AD7AB78320E6E6A800ED965D /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AB77D20E6E6A800ED965D /* UIView+Helpers.swift */; };
 		AD7AB78420E6E6A800ED965D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AB77E20E6E6A800ED965D /* Utilities.swift */; };
-		AD7AB78520E6E6A800ED965D /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AB77F20E6E6A800ED965D /* AnimationViewController.swift */; };
+		AD7AB78520E6E6A800ED965D /* AnimationDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AB77F20E6E6A800ED965D /* AnimationDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		33FAAEAA16BD09A8C1B4D752 /* Pods_PopBounceButton_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PopBounceButton_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93216453183ECE8BB9838CFA /* Pods-PopBounceButton_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopBounceButton_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PopBounceButton_Example/Pods-PopBounceButton_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		A568A31BE4542EAF5C68EBBC /* Pods-PopBounceButton_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopBounceButton_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-PopBounceButton_Example/Pods-PopBounceButton_Example.release.xcconfig"; sourceTree = "<group>"; };
+		AD3CCB1121B1E49300A5886E /* Float+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Helpers.swift"; sourceTree = "<group>"; };
 		AD480E4520E6E78D00E42B72 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		AD480E4620E6E78D00E42B72 /* PopBounceButton.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PopBounceButton.podspec; path = ../PopBounceButton.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AD480E4720E6E78D00E42B72 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -32,12 +34,12 @@
 		AD7AB76F20E6E62900ED965D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD7AB77220E6E62900ED965D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD7AB77420E6E62900ED965D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD7AB77A20E6E6A700ED965D /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		AD7AB77A20E6E6A700ED965D /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		AD7AB77B20E6E6A800ED965D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AD7AB77C20E6E6A800ED965D /* TinderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinderViewController.swift; sourceTree = "<group>"; };
-		AD7AB77D20E6E6A800ED965D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AD7AB77C20E6E6A800ED965D /* TinderDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinderDemoViewController.swift; sourceTree = "<group>"; };
+		AD7AB77D20E6E6A800ED965D /* UIView+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
 		AD7AB77E20E6E6A800ED965D /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		AD7AB77F20E6E6A800ED965D /* AnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
+		AD7AB77F20E6E6A800ED965D /* AnimationDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationDemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,22 @@
 				A568A31BE4542EAF5C68EBBC /* Pods-PopBounceButton_Example.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		AD3CCB1421B1E7C500A5886E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AD3CCB1121B1E49300A5886E /* Float+Helpers.swift */,
+				AD7AB77D20E6E6A800ED965D /* UIView+Helpers.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AD3CCB1521B1E7D800A5886E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		AD480E4320E6E71300E42B72 /* Supporting Files */ = {
@@ -101,11 +119,12 @@
 		AD7AB76720E6E62800ED965D /* Example for PopBounceButton */ = {
 			isa = PBXGroup;
 			children = (
+				AD3CCB1421B1E7C500A5886E /* Extensions */,
+				AD3CCB1521B1E7D800A5886E /* Views */,
 				AD7AB77B20E6E6A800ED965D /* AppDelegate.swift */,
-				AD7AB77F20E6E6A800ED965D /* AnimationViewController.swift */,
-				AD7AB77D20E6E6A800ED965D /* Extensions.swift */,
-				AD7AB77A20E6E6A700ED965D /* TableViewController.swift */,
-				AD7AB77C20E6E6A800ED965D /* TinderViewController.swift */,
+				AD7AB77F20E6E6A800ED965D /* AnimationDemoViewController.swift */,
+				AD7AB77A20E6E6A700ED965D /* DemoViewController.swift */,
+				AD7AB77C20E6E6A800ED965D /* TinderDemoViewController.swift */,
 				AD7AB77E20E6E6A800ED965D /* Utilities.swift */,
 				AD7AB76F20E6E62900ED965D /* Assets.xcassets */,
 				AD7AB77120E6E62900ED965D /* LaunchScreen.storyboard */,
@@ -241,11 +260,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD7AB78120E6E6A800ED965D /* AppDelegate.swift in Sources */,
-				AD7AB78020E6E6A800ED965D /* TableViewController.swift in Sources */,
-				AD7AB78220E6E6A800ED965D /* TinderViewController.swift in Sources */,
-				AD7AB78520E6E6A800ED965D /* AnimationViewController.swift in Sources */,
+				AD7AB78020E6E6A800ED965D /* DemoViewController.swift in Sources */,
+				AD7AB78220E6E6A800ED965D /* TinderDemoViewController.swift in Sources */,
+				AD3CCB1221B1E49300A5886E /* Float+Helpers.swift in Sources */,
+				AD7AB78520E6E6A800ED965D /* AnimationDemoViewController.swift in Sources */,
 				AD7AB78420E6E6A800ED965D /* Utilities.swift in Sources */,
-				AD7AB78320E6E6A800ED965D /* Extensions.swift in Sources */,
+				AD7AB78320E6E6A800ED965D /* UIView+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

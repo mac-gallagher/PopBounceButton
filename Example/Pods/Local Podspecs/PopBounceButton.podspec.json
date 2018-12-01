@@ -1,11 +1,11 @@
 {
   "name": "PopBounceButton",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "platforms": {
     "ios": "9.0"
   },
-  "summary": "A highly-customizable animated button inspired by the familiar button stack from Tinder.",
-  "description": "A highly-customizable animated button built with Facebook's Pop animation library. Inspired by the familiar button stack from Tinder.",
+  "summary": "A customizable animated button inspired by the familiar button stack from Tinder.",
+  "description": "A customizable animated button built with Facebook's Pop animation library. Inspired by the familiar button stack from Tinder.",
   "homepage": "https://github.com/mac-gallagher/PopBounceButton",
   "screenshots": [
     "https://raw.githubusercontent.com/mac-gallagher/PopBounceButton/master/Images/example.gif",
@@ -21,17 +21,10 @@
   },
   "source": {
     "git": "https://github.com/mac-gallagher/PopBounceButton.git",
-    "tag": "1.1.0"
+    "tag": "v1.1.1"
   },
-  "swift_version": "4.1",
+  "swift_version": "4.2",
   "source_files": "PopBounceButton/Classes/**/*",
-  "resources": [
-    "PopBounceButton/Assets/*.xcassets"
-  ],
-  "frameworks": [
-    "UIKit",
-    "pop"
-  ],
   "dependencies": {
     "pop": [
       "~> 1.0"

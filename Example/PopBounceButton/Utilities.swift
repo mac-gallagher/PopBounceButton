@@ -9,7 +9,6 @@
 import UIKit
 
 class Slider: UISlider {
-    
     required init(minimumValue: Float, maximumValue: Float) {
         super.init(frame: .zero)
         initialize(minimumValue: minimumValue, maximumValue: maximumValue)
@@ -28,7 +27,6 @@ class Slider: UISlider {
 }
 
 class ResizingLabel: UILabel {
-    
     init() {
         super.init(frame: .zero)
         initialize()
@@ -45,5 +43,4 @@ class ResizingLabel: UILabel {
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.5
     }
-    
 }

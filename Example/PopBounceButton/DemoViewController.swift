@@ -8,8 +8,7 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
-    
+class DemoViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Demos"
@@ -40,9 +39,9 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            navigationController?.pushViewController(AnimationViewController(), animated: true)
+            navigationController?.pushViewController(AnimationDemoViewController(), animated: true)
         case 1:
-            navigationController?.pushViewController(TinderViewController(), animated: true)
+            navigationController?.pushViewController(TinderDemoViewController(), animated: true)
         default:
             break
         }
