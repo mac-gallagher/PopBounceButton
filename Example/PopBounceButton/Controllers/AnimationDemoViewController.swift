@@ -10,86 +10,80 @@ import UIKit
 import PopBounceButton
 
 class AnimationDemoViewController: UIViewController {
-    
-    //MARK: - Subviews
-    
-    let resetButton: UIButton = {
+    private lazy var resetButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Reset", for: .normal)
+        button.addTarget(self, action: #selector(reset), for: .touchUpInside)
         return button
     }()
     
-    let stackView: UIStackView = {
+    private let stackView: UIStackView = {
         let sv = UIStackView()
         sv.axis = .vertical
         sv.distribution = .equalSpacing
         return sv
     }()
     
-    let button: PopBounceButton = {
+    private let bounceButton: PopBounceButton = {
         let button = PopBounceButton(type: UIButton.ButtonType.roundedRect)
         button.backgroundColor = .orange
         button.layer.masksToBounds = true
         return button
     }()
     
-    let defaultButton = PopBounceButton() //for initial settings
+    private let defaultButton = PopBounceButton() //for initial settings
     
-    //MARK: Labels
+    private let bouncinessLabel = ResizingLabel()
+    private let speedLabel = ResizingLabel()
+    private let velocityLabel = ResizingLabel()
+    private let cancelDurationLabel = ResizingLabel()
+    private let scaleFactorLabel = ResizingLabel()
+    private let scaleDurationLabel = ResizingLabel()
+    private let minimumLongPressDurationLabel = ResizingLabel()
     
-    let bouncinessLabel = ResizingLabel()
-    let speedLabel = ResizingLabel()
-    let velocityLabel = ResizingLabel()
-    let cancelDurationLabel = ResizingLabel()
-    let scaleFactorLabel = ResizingLabel()
-    let scaleDurationLabel = ResizingLabel()
-    let minimumLongPressDurationLabel = ResizingLabel()
-    
-    //MARK: Sliders
-    
-    lazy var bouncinessSlider: Slider = {
+    private lazy var bouncinessSlider: Slider = {
         let slider = Slider(minimumValue: 0, maximumValue: 20)
         slider.tag = 1
         slider.addTarget(self, action: #selector(handleSlider), for: .valueChanged)
         return slider
     }()
     
-    lazy var speedSlider: Slider = {
+    private lazy var speedSlider: Slider = {
         let slider = Slider(minimumValue: 0, maximumValue: 20)
         slider.tag = 2
         slider.addTarget(self, action: #selector(handleSlider), for: .valueChanged)
         return slider
     }()
     
-    lazy var velocitySlider: Slider = {
+    private lazy var velocitySlider: Slider = {
         let slider = Slider(minimumValue: 0, maximumValue: 30)
         slider.tag = 3
         slider.addTarget(self, action: #selector(handleSlider), for: .valueChanged)
         return slider
     }()
     
-    lazy var cancelDurationSlider: Slider = {
+    private lazy var cancelDurationSlider: Slider = {
         let slider = Slider(minimumValue: 0, maximumValue: 1)
         slider.tag = 4
         slider.addTarget(self, action: #selector(handleSlider), for: .valueChanged)
         return slider
     }()
     
-    lazy var scaleFactorSlider: Slider = {
+    private lazy var scaleFactorSlider: Slider = {
         let slider = Slider(minimumValue: 0.5, maximumValue: 1)
         slider.tag = 5
         slider.addTarget(self, action: #selector(handleSlider), for: .valueChanged)
         return slider
     }()
     
-    lazy var scaleDurationSlider: Slider = {
+    private lazy var scaleDurationSlider: Slider = {
         let slider = Slider(minimumValue: 0, maximumValue: 0.5)
         slider.tag = 6
         slider.addTarget(self, action: #selector(handleSlider), for: .valueChanged)
         return slider
     }()
     
-    lazy var minimumLongPressDurationSlider: Slider = {
+    private lazy var minimumLongPressDurationSlider: Slider = {
         let slider = Slider(minimumValue: 0, maximumValue: 1)
         slider.tag = 7
         slider.addTarget(self, action: #selector(handleSlider), for: .valueChanged)
@@ -109,24 +103,23 @@ class AnimationDemoViewController: UIViewController {
     
     //MARK: - Layout
     
-    func layoutSubviews() {
+    private func layoutSubviews() {
         view.addSubview(resetButton)
         resetButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: nil, bottom: nil, right: view.safeAreaLayoutGuide.rightAnchor)
-        resetButton.addTarget(self, action: #selector(reset), for: .touchUpInside)
         layoutBounceButton()
         layoutStackView()
     }
     
-    func layoutBounceButton() {
-        view.addSubview(button)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.25).isActive = true
-        button.widthAnchor.constraint(equalTo: button.heightAnchor).isActive = true
-        button.topAnchor.constraint(equalTo: resetButton.bottomAnchor).isActive = true
-        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    private func layoutBounceButton() {
+        view.addSubview(bounceButton)
+        bounceButton.translatesAutoresizingMaskIntoConstraints = false
+        bounceButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.25).isActive = true
+        bounceButton.widthAnchor.constraint(equalTo: bounceButton.heightAnchor).isActive = true
+        bounceButton.topAnchor.constraint(equalTo: resetButton.bottomAnchor).isActive = true
+        bounceButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
-    func layoutStackView() {
+    private func layoutStackView() {
         let minimumSpacing: CGFloat = 10
 
         let bouncinessStackView = horizontalStackView(subviews: [bouncinessLabel, bouncinessSlider], spacing: minimumSpacing)
@@ -138,7 +131,7 @@ class AnimationDemoViewController: UIViewController {
         let minimumLongPressDurationStackView = horizontalStackView(subviews: [minimumLongPressDurationLabel, minimumLongPressDurationSlider], spacing: minimumSpacing)
         
         view.addSubview(stackView)
-        stackView.anchor(top: button.bottomAnchor, left: view.safeAreaLayoutGuide.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.safeAreaLayoutGuide.rightAnchor)
+        stackView.anchor(top: bounceButton.bottomAnchor, left: view.safeAreaLayoutGuide.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.safeAreaLayoutGuide.rightAnchor)
         stackView.addArrangedSubview(UIView())
         stackView.addArrangedSubview(bouncinessStackView)
         stackView.addArrangedSubview(speedStackView)
@@ -149,7 +142,7 @@ class AnimationDemoViewController: UIViewController {
         stackView.addArrangedSubview(minimumLongPressDurationStackView)
     }
     
-    func horizontalStackView(subviews: [UIView], spacing: CGFloat) -> UIStackView {
+    private func horizontalStackView(subviews: [UIView], spacing: CGFloat) -> UIStackView {
         let stack = UIStackView()
         stack.distribution = .fillEqually
         stack.spacing = spacing
@@ -160,61 +153,60 @@ class AnimationDemoViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        button.layer.cornerRadius = button.bounds.width / 2
+        bounceButton.layer.cornerRadius = bounceButton.bounds.width / 2
     }
     
-    //MARK: Button/Slider Handling
+    //MARK: - Slider Handling
     
     @objc func reset() {
-//        button.removeAllAnimations()
-        button.springBounciness = defaultButton.springBounciness
-        button.springSpeed = defaultButton.springSpeed
-        button.springVelocity = defaultButton.springVelocity
-        button.cancelDuration = defaultButton.cancelDuration
-        button.longPressScaleFactor = defaultButton.longPressScaleFactor
-        button.longPressScaleDuration = defaultButton.longPressScaleDuration
-        button.minimumPressDuration = defaultButton.minimumPressDuration
+        bounceButton.springBounciness = defaultButton.springBounciness
+        bounceButton.springSpeed = defaultButton.springSpeed
+        bounceButton.springVelocity = defaultButton.springVelocity
+        bounceButton.cancelTapScaleDuration = defaultButton.cancelTapScaleDuration
+        bounceButton.longPressScaleFactor = defaultButton.longPressScaleFactor
+        bounceButton.longPressScaleDuration = defaultButton.longPressScaleDuration
+        bounceButton.minimumPressDuration = defaultButton.minimumPressDuration
         
         updateLabels()
         updateSliders()
     }
     
-    func updateLabels() {
-        bouncinessLabel.text = "Bounciness = \(Int(button.springBounciness))"
-        speedLabel.text = "Speed = \(Int(button.springSpeed))"
-        velocityLabel.text = "Velocity = \(Int(button.springVelocity))"
-        cancelDurationLabel.text = "Cancel Duration = " + String(format: "%.2f", button.cancelDuration) + " s"
-        scaleFactorLabel.text = "Scale Factor = " + String(format: "%.2f", button.longPressScaleFactor)
-        scaleDurationLabel.text = "Scale Duration = " + String(format: "%.2f", button.longPressScaleDuration) + " s"
-        minimumLongPressDurationLabel.text = "Min Press Duration = " + String(format: "%.2f", button.minimumPressDuration) + " s"
+    private func updateLabels() {
+        bouncinessLabel.text = "Bounciness = \(Int(bounceButton.springBounciness))"
+        speedLabel.text = "Speed = \(Int(bounceButton.springSpeed))"
+        velocityLabel.text = "Velocity = \(Int(bounceButton.springVelocity))"
+        cancelDurationLabel.text = "Cancel Duration = " + String(format: "%.2f", bounceButton.cancelTapScaleDuration) + " s"
+        scaleFactorLabel.text = "Scale Factor = " + String(format: "%.2f", bounceButton.longPressScaleFactor)
+        scaleDurationLabel.text = "Scale Duration = " + String(format: "%.2f", bounceButton.longPressScaleDuration) + " s"
+        minimumLongPressDurationLabel.text = "Min Press Duration = " + String(format: "%.2f", bounceButton.minimumPressDuration) + " s"
     }
     
-    func updateSliders() {
-        bouncinessSlider.setValue(Float(button.springBounciness), animated: true)
-        speedSlider.setValue(Float(button.springSpeed), animated: true)
-        velocitySlider.setValue(Float(button.springVelocity), animated: true)
-        cancelDurationSlider.setValue(Float(button.cancelDuration), animated: true)
-        scaleFactorSlider.setValue(Float(button.longPressScaleFactor), animated: true)
-        scaleDurationSlider.setValue(Float(button.longPressScaleDuration), animated: true)
-        minimumLongPressDurationSlider.setValue(Float(button.minimumPressDuration), animated: true)
+    private func updateSliders() {
+        bouncinessSlider.setValue(Float(bounceButton.springBounciness), animated: true)
+        speedSlider.setValue(Float(bounceButton.springSpeed), animated: true)
+        velocitySlider.setValue(Float(bounceButton.springVelocity), animated: true)
+        cancelDurationSlider.setValue(Float(bounceButton.cancelTapScaleDuration), animated: true)
+        scaleFactorSlider.setValue(Float(bounceButton.longPressScaleFactor), animated: true)
+        scaleDurationSlider.setValue(Float(bounceButton.longPressScaleDuration), animated: true)
+        minimumLongPressDurationSlider.setValue(Float(bounceButton.minimumPressDuration), animated: true)
     }
     
-    @objc func handleSlider(_ sender: UISlider) {
+    @objc private func handleSlider(_ sender: UISlider) {
         switch sender.tag {
         case 1:
-            button.springBounciness = CGFloat(sender.value.rounded(toPlaces: 0))
+            bounceButton.springBounciness = CGFloat(sender.value.rounded(toPlaces: 0))
         case 2:
-            button.springSpeed = CGFloat(sender.value.rounded(toPlaces: 0))
+            bounceButton.springSpeed = CGFloat(sender.value.rounded(toPlaces: 0))
         case 3:
-            button.springVelocity = CGFloat(sender.value.rounded(toPlaces: 0))
+            bounceButton.springVelocity = CGFloat(sender.value.rounded(toPlaces: 0))
         case 4:
-            button.cancelDuration = TimeInterval(sender.value.rounded(toPlaces: 2))
+            bounceButton.cancelTapScaleDuration = TimeInterval(sender.value.rounded(toPlaces: 2))
         case 5:
-            button.longPressScaleFactor = CGFloat(sender.value.rounded(toPlaces: 2))
+            bounceButton.longPressScaleFactor = CGFloat(sender.value.rounded(toPlaces: 2))
         case 6:
-            button.longPressScaleDuration = TimeInterval(sender.value.rounded(toPlaces: 2))
+            bounceButton.longPressScaleDuration = TimeInterval(sender.value.rounded(toPlaces: 2))
         case 7:
-            button.minimumPressDuration = TimeInterval(sender.value.rounded(toPlaces: 2))
+            bounceButton.minimumPressDuration = TimeInterval(sender.value.rounded(toPlaces: 2))
         default:
             break
         }

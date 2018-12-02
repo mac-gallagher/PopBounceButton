@@ -1,6 +1,6 @@
 //
-//  Extensions.swift
-//  Demo
+//  UIView+Extensions.swift
+//  PopBounceButton_Example
 //
 //  Created by Mac Gallagher on 6/14/18.
 //  Copyright © 2018 Mac Gallagher. All rights reserved.

@@ -46,5 +46,4 @@ class DemoViewController: UITableViewController {
             break
         }
     }
-    
 }

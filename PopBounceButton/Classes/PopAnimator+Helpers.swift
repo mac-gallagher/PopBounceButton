@@ -16,18 +16,14 @@ extension POPAnimator {
         view.pop_add(scaleAnimation, forKey: POPAnimator.scaleKey)
     }
     
-    static func applySpringScaleAnimation(to view: UIView, fromValue: CGPoint? = nil, toValue: CGPoint, springBounciness: CGFloat, springSpeed: CGFloat, initialVelocity: CGSize? = nil, delay: TimeInterval = 0) {
+    static func applySpringScaleAnimation(to view: UIView, fromValue: CGPoint, toValue: CGPoint, springBounciness: CGFloat, springSpeed: CGFloat, initialVelocity: CGPoint, delay: TimeInterval = 0) {
         guard let scaleAnimation = POPSpringAnimation(propertyNamed: kPOPViewScaleXY) else { return }
-        if fromValue != nil {
-            scaleAnimation.fromValue = fromValue
-        }
+        scaleAnimation.fromValue = fromValue
         scaleAnimation.toValue = toValue
         scaleAnimation.beginTime = CACurrentMediaTime() + delay
         scaleAnimation.springBounciness = springBounciness
         scaleAnimation.springSpeed = springSpeed
-        if initialVelocity != nil {
-            scaleAnimation.velocity = initialVelocity
-        }
+        scaleAnimation.velocity = initialVelocity
         view.pop_add(scaleAnimation, forKey: POPAnimator.springScaleKey)
     }
 }

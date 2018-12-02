@@ -1,5 +1,5 @@
 //
-//  Float+Helpers.swift
+//  Float+Extensions.swift
 //  PopBounceButton_Example
 //
 //  Created by Mac Gallagher on 11/30/18.

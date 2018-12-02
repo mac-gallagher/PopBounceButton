@@ -10,15 +10,25 @@ import UIKit
 import pop
 
 open class PopBounceButton: UIButton {
-    //Spring Animation Settings
+    ///The effective bounciness of the spring animation. Higher values increase spring movement range resulting in more oscillations and springiness. Defined as a value in the range [0, 20]. Defaults to 19.
     open var springBounciness: CGFloat = 19
+
+    ///The effective speed of the spring animation. Higher values increase the dampening power of the spring. Defined as a value in the range [0, 20]. Defaults to 10.
     open var springSpeed: CGFloat = 10
-    open var springVelocity: CGFloat = 6
-    open var cancelDuration: TimeInterval = 0.3
     
-    //Long Press Animation Settings
+    ///The initial velocity of the spring animation. Higher values increase the percieved force from the user's touch. Expressed in scale factor per second. Defaults to 6.
+    open var springVelocity: CGFloat = 6
+    
+    ///The total duration of the scale animation performed after a touchUpOutside event is recognized. Expressed in seconds. Defaults to 0.3.
+    open var cancelTapScaleDuration: TimeInterval = 0.3
+    
+    ///The factor by which to scale the button after a long-press has been recognized. Defaults to 0.7.
     open var longPressScaleFactor: CGFloat = 0.7
+    
+    ///The total duration of the scale animation performed after a long-press has been recognized. Expressed in seconds. Defaults to 0.1.
     open var longPressScaleDuration: TimeInterval = 0.1
+    
+    ///The minimum period fingers must press on the button for a long-press to be recognized. Expressed in seconds. Defaults to 0.2.
     open var minimumPressDuration: TimeInterval = 0.2
     
     private var isScaled: Bool = false
@@ -65,19 +75,20 @@ open class PopBounceButton: UIButton {
     
     @objc private func handleTouchUpInside() {
         pop_removeAllAnimations()
-        if isScaled {
-            POPAnimator.applySpringScaleAnimation(to: self, toValue: .one, springBounciness: springBounciness, springSpeed: springSpeed, delay: 0.05)
-        } else {
-            let velocityFactor = -frame.width / initialBounds.width
-            let velocity = CGSize(width: velocityFactor * springVelocity, height: velocityFactor * springVelocity)
-            POPAnimator.applySpringScaleAnimation(to: self, fromValue: CGPoint(x: 0.999, y: 0.999), toValue: .one, springBounciness: springBounciness, springSpeed: springSpeed, initialVelocity: velocity)
-        }
+        let scaleFactor = frame.width / initialBounds.width
+        POPAnimator.applySpringScaleAnimation(to: self,
+                                              fromValue: CGPoint(x: scaleFactor - 0.001, y: scaleFactor - 0.001),
+                                              toValue: .one,
+                                              springBounciness: springBounciness,
+                                              springSpeed: springSpeed,
+                                              initialVelocity: isScaled ? .zero : CGPoint(x: -scaleFactor * springVelocity, y: -scaleFactor * springVelocity),
+                                              delay: isScaled ? 0.05 : 0)
         longPressTimer.invalidate()
         isScaled = false
     }
     
     @objc private func handleTouchUpOutside() {
-        POPAnimator.applyScaleAnimation(to: self, toValue: .one, duration: cancelDuration)
+        POPAnimator.applyScaleAnimation(to: self, toValue: .one, duration: cancelTapScaleDuration)
         longPressTimer.invalidate()
         isScaled = false
     }
