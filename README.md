@@ -1,5 +1,5 @@
 # PopBounceButton
-![Swift-Version](https://img.shields.io/badge/Swift-4.1-orange.svg)
+![Swift-Version](https://img.shields.io/badge/Swift-4.2-orange.svg)
 ![CocoaPods](https://img.shields.io/cocoapods/v/PopBounceButton.svg)
 ![license](https://img.shields.io/cocoapods/l/PopBounceButton.svg)
 ![CocoaPods](https://img.shields.io/cocoapods/p/PopBounceButton.svg)
@@ -71,7 +71,9 @@ Because PopBounceButton is a subclass of UIButton, it can be customized in the s
 var springBounciness: CGFloat = 19.0
 var springSpeed: CGFloat = 10.0
 var springVelocity: CGFloat = 6.0
+
 var cancelTapScaleDuration: TimeInterval = 0.3
+
 var longPressScaleFactor: CGFloat = 0.7
 var longPressScaleDuration: TimeInterval = 0.1
 var minimumPressDuration: TimeInterval = 0.2
