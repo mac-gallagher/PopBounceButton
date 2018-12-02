@@ -25,7 +25,7 @@ class AnimationDemoViewController: UIViewController {
     }()
     
     private let bounceButton: PopBounceButton = {
-        let button = PopBounceButton(type: UIButton.ButtonType.roundedRect)
+        let button = PopBounceButton()
         button.backgroundColor = .orange
         button.layer.masksToBounds = true
         return button

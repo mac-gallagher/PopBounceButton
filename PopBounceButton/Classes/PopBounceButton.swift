@@ -69,7 +69,7 @@ open class PopBounceButton: UIButton {
     
     @objc private func handleScale() {
         pop_removeAllAnimations()
-        POPAnimator.applyScaleAnimation(to: self, toValue: CGPoint(x: longPressScaleFactor, y: longPressScaleFactor), duration: longPressScaleDuration)
+        POPAnimator.applyScaleAnimation(to: self, toValue: CGPoint(c: longPressScaleFactor), duration: longPressScaleDuration)
         isScaled = true
     }
     
@@ -77,11 +77,11 @@ open class PopBounceButton: UIButton {
         pop_removeAllAnimations()
         let scaleFactor = frame.width / initialBounds.width
         POPAnimator.applySpringScaleAnimation(to: self,
-                                              fromValue: CGPoint(x: scaleFactor - 0.001, y: scaleFactor - 0.001),
+                                              fromValue: CGPoint(c: scaleFactor - 0.01),
                                               toValue: .one,
                                               springBounciness: springBounciness,
                                               springSpeed: springSpeed,
-                                              initialVelocity: isScaled ? .zero : CGPoint(x: -scaleFactor * springVelocity, y: -scaleFactor * springVelocity),
+                                              initialVelocity: isScaled ? .zero : CGPoint(c: -scaleFactor * springVelocity),
                                               delay: isScaled ? 0.05 : 0)
         longPressTimer.invalidate()
         isScaled = false
@@ -96,4 +96,10 @@ open class PopBounceButton: UIButton {
 
 extension CGPoint {
     static var one = CGPoint(x: 1, y: 1)
+    
+    init(c: CGFloat) {
+        self.init()
+        self.x = c
+        self.y = c
+    }
 }
