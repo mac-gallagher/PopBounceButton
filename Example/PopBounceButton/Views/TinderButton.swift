@@ -28,13 +28,5 @@ class TinderButton: PopBounceButton {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         layer.cornerRadius = bounds.width / 2
-        setShadow()
-    }
-    
-    private func setShadow() {
-        layer.shadowRadius = 0.2 * bounds.width
-        layer.shadowOpacity = 0.05
-        layer.shadowOffset = CGSize(width: 0, height: 0.15 * bounds.width)
-        layer.shadowColor = UIColor.black.cgColor
     }
 }

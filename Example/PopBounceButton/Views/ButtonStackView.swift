@@ -68,35 +68,36 @@ class ButtonStackView: UIStackView {
     private func initialize() {
         distribution = .equalSpacing
         alignment = .center
-        configureButtonStackView()
+        configure()
     }
     
-    private func configureButtonStackView() {
-        addArrangedSubview(undoButton)
-        addArrangedSubview(passButton)
-        addArrangedSubview(superLikeButton)
-        addArrangedSubview(likeButton)
-        addArrangedSubview(boostButton)
-        layoutButtons()
-    }
-    
-    private func layoutButtons() {
+    private func configure() {
         let largeMultiplier: CGFloat = 66/414 //based on width of iPhone 8+
         let smallMultiplier: CGFloat = 54/414 //based on width of iPhone 8+
-        layoutButton(undoButton, diameterMultiplier: smallMultiplier)
-        layoutButton(passButton, diameterMultiplier: largeMultiplier)
-        layoutButton(superLikeButton, diameterMultiplier: smallMultiplier)
-        layoutButton(likeButton, diameterMultiplier: largeMultiplier)
-        layoutButton(boostButton, diameterMultiplier: smallMultiplier)
+        addArrangedSubview(from: undoButton, diameterMultiplier: smallMultiplier)
+        addArrangedSubview(from: passButton, diameterMultiplier: largeMultiplier)
+        addArrangedSubview(from: superLikeButton, diameterMultiplier: smallMultiplier)
+        addArrangedSubview(from: likeButton, diameterMultiplier: largeMultiplier)
+        addArrangedSubview(from: boostButton, diameterMultiplier: smallMultiplier)
     }
     
-    private func layoutButton(_ button: PopBounceButton, diameterMultiplier: CGFloat) {
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.widthAnchor.constraint(lessThanOrEqualTo: widthAnchor, multiplier: diameterMultiplier).isActive = true
-        button.heightAnchor.constraint(equalTo: button.widthAnchor).isActive = true
+    private func addArrangedSubview(from button: TinderButton, diameterMultiplier: CGFloat) {
+        let container = ButtonContainer()
+        container.addSubview(button)
+        button.anchorToSuperview()
+        addArrangedSubview(container)
+        container.translatesAutoresizingMaskIntoConstraints = false
+        container.widthAnchor.constraint(lessThanOrEqualTo: widthAnchor, multiplier: diameterMultiplier).isActive = true
+        container.heightAnchor.constraint(equalTo: button.widthAnchor).isActive = true
     }
     
     @objc private func handleTap(_ button: TinderButton) {
         delegate?.didTapButton(button)
+    }
+}
+
+fileprivate class ButtonContainer: UIView {
+    override func draw(_ rect: CGRect) {
+        applyShadow(radius: 0.2 * bounds.width, opacity: 0.05, offset: CGSize(width: 0, height: 0.15 * bounds.width))
     }
 }

@@ -22,6 +22,8 @@ class DemoViewController: UITableViewController {
             cell.textLabel?.text = "Button Animation Demo"
         case 1:
             cell.textLabel?.text = "Tinder App Demo"
+        case 2:
+            cell.textLabel?.text = "Message Button Demo"
         default:
             break
         }
@@ -29,7 +31,7 @@ class DemoViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -42,6 +44,8 @@ class DemoViewController: UITableViewController {
             navigationController?.pushViewController(AnimationDemoViewController(), animated: true)
         case 1:
             navigationController?.pushViewController(TinderDemoViewController(), animated: true)
+        case 2:
+            navigationController?.pushViewController(MessageDemoViewController(), animated: true)
         default:
             break
         }

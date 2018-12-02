@@ -23,6 +23,8 @@
 		ADE42D7821B34416006BD209 /* ResizingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE42D7721B34416006BD209 /* ResizingLabel.swift */; };
 		ADE42D7B21B3483D006BD209 /* TinderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE42D7A21B3483D006BD209 /* TinderButton.swift */; };
 		ADE42D7D21B35196006BD209 /* ButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE42D7C21B35196006BD209 /* ButtonStackView.swift */; };
+		ADE42D7F21B36C0C006BD209 /* MessageDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE42D7E21B36C0C006BD209 /* MessageDemoViewController.swift */; };
+		ADE42D8121B387C9006BD209 /* MessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE42D8021B387C9006BD209 /* MessageButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		ADE42D7721B34416006BD209 /* ResizingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizingLabel.swift; sourceTree = "<group>"; };
 		ADE42D7A21B3483D006BD209 /* TinderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderButton.swift; sourceTree = "<group>"; };
 		ADE42D7C21B35196006BD209 /* ButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStackView.swift; sourceTree = "<group>"; };
+		ADE42D7E21B36C0C006BD209 /* MessageDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDemoViewController.swift; sourceTree = "<group>"; };
+		ADE42D8021B387C9006BD209 /* MessageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				ADE42D7C21B35196006BD209 /* ButtonStackView.swift */,
+				ADE42D8021B387C9006BD209 /* MessageButton.swift */,
 				ADE42D7721B34416006BD209 /* ResizingLabel.swift */,
 				ADE42D7521B343F8006BD209 /* Slider.swift */,
 				ADE42D7A21B3483D006BD209 /* TinderButton.swift */,
@@ -147,6 +152,7 @@
 				AD7AB77F20E6E6A800ED965D /* AnimationDemoViewController.swift */,
 				AD7AB77A20E6E6A700ED965D /* DemoViewController.swift */,
 				AD7AB77C20E6E6A800ED965D /* TinderDemoViewController.swift */,
+				ADE42D7E21B36C0C006BD209 /* MessageDemoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -278,10 +284,12 @@
 			files = (
 				AD7AB78120E6E6A800ED965D /* AppDelegate.swift in Sources */,
 				ADE42D7D21B35196006BD209 /* ButtonStackView.swift in Sources */,
+				ADE42D7F21B36C0C006BD209 /* MessageDemoViewController.swift in Sources */,
 				ADE42D7821B34416006BD209 /* ResizingLabel.swift in Sources */,
 				AD7AB78020E6E6A800ED965D /* DemoViewController.swift in Sources */,
 				ADE42D7621B343F8006BD209 /* Slider.swift in Sources */,
 				ADE42D7B21B3483D006BD209 /* TinderButton.swift in Sources */,
+				ADE42D8121B387C9006BD209 /* MessageButton.swift in Sources */,
 				AD7AB78220E6E6A800ED965D /* TinderDemoViewController.swift in Sources */,
 				AD3CCB1221B1E49300A5886E /* Float+Extensions.swift in Sources */,
 				AD7AB78520E6E6A800ED965D /* AnimationDemoViewController.swift in Sources */,
@@ -354,7 +362,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -408,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

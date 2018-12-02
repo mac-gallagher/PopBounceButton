@@ -38,4 +38,18 @@ extension UIView {
         
         return anchors
     }
+    
+    @discardableResult
+    func anchorToSuperview() -> [NSLayoutConstraint] {
+        return anchor(top: superview?.topAnchor, left: superview?.leftAnchor, bottom: superview?.bottomAnchor, right: superview?.rightAnchor)
+    }
+}
+
+extension UIView {
+    func applyShadow(radius: CGFloat, opacity: Float, offset: CGSize, color: UIColor = .black) {
+        layer.shadowRadius = radius
+        layer.shadowOpacity = opacity
+        layer.shadowOffset = offset
+        layer.shadowColor = color.cgColor
+    }
 }
