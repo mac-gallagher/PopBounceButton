@@ -8,8 +8,7 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
-    
+class DemoViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Demos"
@@ -23,6 +22,8 @@ class TableViewController: UITableViewController {
             cell.textLabel?.text = "Button Animation Demo"
         case 1:
             cell.textLabel?.text = "Tinder App Demo"
+        case 2:
+            cell.textLabel?.text = "Message Button Demo"
         default:
             break
         }
@@ -30,7 +31,7 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -40,12 +41,13 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            navigationController?.pushViewController(AnimationViewController(), animated: true)
+            navigationController?.pushViewController(AnimationDemoViewController(), animated: true)
         case 1:
-            navigationController?.pushViewController(TinderViewController(), animated: true)
+            navigationController?.pushViewController(TinderDemoViewController(), animated: true)
+        case 2:
+            navigationController?.pushViewController(MessageDemoViewController(), animated: true)
         default:
             break
         }
     }
-    
 }

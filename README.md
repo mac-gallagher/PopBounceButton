@@ -9,12 +9,22 @@ A customizable animated button built with Facebook's Pop animation library. Insp
 
 ![TinderDemo](https://raw.githubusercontent.com/mac-gallagher/PopBounceButton/master/Images/tinder_demo.gif)
 
-## Features
-* Lightweight and highly customizable
-* Animations for multiple UIControlEvents
-* Pure Swift 4
+![MessageButtonExample](https://raw.githubusercontent.com/mac-gallagher/PopBounceButton/master/Images/example.gif)
 
-## Installation
+# Features
+- [x] Lightweight and highly customizable
+- [x] Animations for multiple UIControlEvents
+- [x] Pure Swift 4
+
+# Example
+To run the example project, clone the repo and run the `PopBounceButton-Example` target. 
+
+# Requirements
+* iOS 9.0+
+* Xcode 9.0+
+* Swift 4.0+
+
+# Installation
 
 ### CocoaPods
 PopBounceButton is available through [CocoaPods](<https://cocoapods.org/>). To install it, simply add the following line to your `Podfile`:
@@ -23,10 +33,17 @@ PopBounceButton is available through [CocoaPods](<https://cocoapods.org/>). To i
 
 
 ### Manual
-1. Download and drop `PopBounceButton.swift` into your project. 
+1. Download and drop the `PopBounceButton` directory into your project. 
 2. Install Facebook's [Pop](<https://github.com/facebook/pop>) library.
 
-## Usage
+# Contributing
+- If you **found a bug**, open an issue and tag as bug.
+- If you **have a feature request**, open an issue and tag as feature.
+- If you **want to contribute**, submit a pull request.
+	- In order to submit a pull request, please fork this repo and submit a pull request from your forked repo.
+	- Have a detailed message as to what your pull request fixes/enhances/adds.
+
+# Quick Start
 
 1. Add a `PopBounceButton` to your view.
 
@@ -47,72 +64,24 @@ PopBounceButton is available through [CocoaPods](<https://cocoapods.org/>). To i
     }
     ```
 
-## Customization
-Since PopBounceButton is essentially a UIButton wrapper, it can be customized in exactly the same manner (the only exception is adding shadows, see below). You can also customize the animations to suit your project's needs.
-
-### Animation Settings
-
-Attribute  | Description
-|:------------- |:-------------
-`springBounciness`  | The effective bounciness of the spring animation. Higher values increase spring movement range resulting in more oscillations and springiness. Defined as a value in the range [0, 20]. Defaults to 19.
-`springSpeed`   | The effective speed of the spring animation. Higher values increase the dampening power of the spring. Defined as a value in the range [0, 20]. Defaults to 10.
-`springVelocity`   | The initial velocity of the spring animation. Higher values increase the percieved force from the user's touch. Expressed in scale factor per second. Defaults to 6.
-`cancelDuration`   | The total duration of the scale animation performed after a `touchUpOutside` event is recognized. Expressed in seconds. Defaults to 0.3.
-`scaleFactor`   | The factor by which to scale the button after a long-press has been recognized. Defaults to 0.7.
-`scaleDuration`   | The total duration of the scale animation performed after a long-press has been recognized. Expressed in seconds. Defaults to 0.1.
-`minimumPressDuration`   | The minimum period fingers must press on the button for a long-press to be recognized. Expressed in seconds. Defaults to 0.2.
- 
-### Setting a shadow
-The only property that cannot be modified directly (via its layer) is the button's shadow. To add a shadow to your PopBounceButton, call the `setShadow` function (see example below).
-### Example
-The code below produces the following output:
-
-![MessageButtonExample](https://raw.githubusercontent.com/mac-gallagher/PopBounceButton/master/Images/example.gif)
+# Customization
+Because PopBounceButton is a subclass of UIButton, it can be customized in the same way. The button's animations can be changed by modifying the following variables exposed by `PopBounceButton`: 
 
 ```swift
-//Initialize button
-let button = PopBounceButton()
-button.frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 50))
-view.addSubview(button)
-
-//Customize animations
-button.springSpeed = 15
-button.springBounciness = 16
-button.springVelocity = 2
-button.scaleFactor = 0.9
-
-//Set image and title
-button.setImage(#imageLiteral(resourceName: "envelope"))
-button.imageView?.contentMode = .scaleAspectFit
-button.imageEdgeInsets = UIEdgeInsets(top: 15, left: -12, bottom: 15, right: 0)
-button.setTitle("MESSAGES")
-button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-button.titleEdgeInsets = UIEdgeInsets(top: 0, left: -70, bottom: 0, right: 0)
-
-//Customize layer
-button.layer.cornerRadius = button.frame.height / 2
-button.setShadow(radius: 5, opacity: 0.3, offset: CGSize(width: 0, height: 3), color: .black)
-
-//Add gradient layer 
-let greenColor = UIColor(red: 39/255, green: 216/255, blue: 91/255, alpha: 1).cgColor
-let tealColor = UIColor(red: 30/255, green: 228/255, blue: 188/255, alpha: 1).cgColor
-let gradientLayer = CAGradientLayer()
-gradientLayer.frame = button.bounds
-gradientLayer.colors = [greenColor, tealColor]
-gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
-gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
-button.layer.insertSublayer(gradientLayer, at: 0)   
+var springBounciness: CGFloat = 19.0
+var springSpeed: CGFloat = 10.0
+var springVelocity: CGFloat = 6.0
+var cancelTapScaleDuration: TimeInterval = 0.3
+var longPressScaleFactor: CGFloat = 0.7
+var longPressScaleDuration: TimeInterval = 0.1
+var minimumPressDuration: TimeInterval = 0.2
 ```
 
-## Requirements
-* iOS 9.0+
-* Xcode 9.0+
-
-## Sources
+# Sources
 * [Pop](<https://github.com/facebook/pop>): Facebook's iOS animation framework.
 
-## Author
+# Author
 Mac Gallagher, jmgallagher36@gmail.com
 
-## License
+# License
 PopBounceButton is available under the [MIT License](LICENSE), see LICENSE for more infomation.

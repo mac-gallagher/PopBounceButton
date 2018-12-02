@@ -1,6 +1,6 @@
 PODS:
-  - pop (1.0.10)
-  - PopBounceButton (1.1.0):
+  - pop (1.0.12)
+  - PopBounceButton (1.1.1):
     - pop (~> 1.0)
 
 DEPENDENCIES:
@@ -15,8 +15,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
-  PopBounceButton: 4950252c675ca1ee94071eaad8a1ed266076a6ca
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  PopBounceButton: 878b6fbef4761b4762ab2a19aabc052805af85bc
 
 PODFILE CHECKSUM: af2d780f4fb227f8cee3a85b52dfdaa1b7309d80
 
