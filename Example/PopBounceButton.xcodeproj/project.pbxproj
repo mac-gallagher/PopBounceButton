@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5AD4D457F7BBA33ACFAEA8F6 /* Pods_PopBounceButton_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FAAEAA16BD09A8C1B4D752 /* Pods_PopBounceButton_Example.framework */; };
+		6623A8617AFDADC625BD4005 /* Pods_PopBounceButton_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B111491302068C79AA92D740 /* Pods_PopBounceButton_Tests.framework */; };
 		AD3CCB1221B1E49300A5886E /* Float+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3CCB1121B1E49300A5886E /* Float+Extensions.swift */; };
 		AD480E4820E6E78D00E42B72 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = AD480E4520E6E78D00E42B72 /* LICENSE */; };
 		AD480E4920E6E78D00E42B72 /* PopBounceButton.podspec in Resources */ = {isa = PBXBuildFile; fileRef = AD480E4620E6E78D00E42B72 /* PopBounceButton.podspec */; };
@@ -25,12 +26,24 @@
 		ADE42D7D21B35196006BD209 /* ButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE42D7C21B35196006BD209 /* ButtonStackView.swift */; };
 		ADE42D7F21B36C0C006BD209 /* MessageDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE42D7E21B36C0C006BD209 /* MessageDemoViewController.swift */; };
 		ADE42D8121B387C9006BD209 /* MessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE42D8021B387C9006BD209 /* MessageButton.swift */; };
+		ADFE0D3921D96E4D00A8D46D /* PopBounceButtonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFE0D3821D96E4D00A8D46D /* PopBounceButtonSpec.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ADFE0D3B21D96E4D00A8D46D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD7AB75D20E6E62800ED965D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD7AB76420E6E62800ED965D;
+			remoteInfo = PopBounceButton_Example;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		33FAAEAA16BD09A8C1B4D752 /* Pods_PopBounceButton_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PopBounceButton_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93216453183ECE8BB9838CFA /* Pods-PopBounceButton_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopBounceButton_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PopBounceButton_Example/Pods-PopBounceButton_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		A568A31BE4542EAF5C68EBBC /* Pods-PopBounceButton_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopBounceButton_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-PopBounceButton_Example/Pods-PopBounceButton_Example.release.xcconfig"; sourceTree = "<group>"; };
+		AB2B508B74EFCE664EA381C4 /* Pods-PopBounceButton_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopBounceButton_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PopBounceButton_Tests/Pods-PopBounceButton_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		AD3CCB1121B1E49300A5886E /* Float+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Extensions.swift"; sourceTree = "<group>"; };
 		AD480E4520E6E78D00E42B72 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		AD480E4620E6E78D00E42B72 /* PopBounceButton.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PopBounceButton.podspec; path = ../PopBounceButton.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -50,6 +63,11 @@
 		ADE42D7C21B35196006BD209 /* ButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStackView.swift; sourceTree = "<group>"; };
 		ADE42D7E21B36C0C006BD209 /* MessageDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDemoViewController.swift; sourceTree = "<group>"; };
 		ADE42D8021B387C9006BD209 /* MessageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageButton.swift; sourceTree = "<group>"; };
+		ADFE0D3621D96E4D00A8D46D /* PopBounceButton_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopBounceButton_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADFE0D3821D96E4D00A8D46D /* PopBounceButtonSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopBounceButtonSpec.swift; sourceTree = "<group>"; };
+		ADFE0D3A21D96E4D00A8D46D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B111491302068C79AA92D740 /* Pods_PopBounceButton_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PopBounceButton_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1C9FFC6F2C09CC482075227 /* Pods-PopBounceButton_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopBounceButton_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PopBounceButton_Tests/Pods-PopBounceButton_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +79,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADFE0D3321D96E4D00A8D46D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6623A8617AFDADC625BD4005 /* Pods_PopBounceButton_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -69,6 +95,8 @@
 			children = (
 				93216453183ECE8BB9838CFA /* Pods-PopBounceButton_Example.debug.xcconfig */,
 				A568A31BE4542EAF5C68EBBC /* Pods-PopBounceButton_Example.release.xcconfig */,
+				E1C9FFC6F2C09CC482075227 /* Pods-PopBounceButton_Tests.debug.xcconfig */,
+				AB2B508B74EFCE664EA381C4 /* Pods-PopBounceButton_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -117,6 +145,7 @@
 			children = (
 				AD480E4420E6E76600E42B72 /* Podspec Metadata */,
 				AD7AB76720E6E62800ED965D /* Example for PopBounceButton */,
+				ADFE0D3721D96E4D00A8D46D /* Tests */,
 				AD7AB76620E6E62800ED965D /* Products */,
 				24ACDBE5E6E523ADD2D414D9 /* Pods */,
 				B0EE3BECBE3FFCFC5BD6AD7F /* Frameworks */,
@@ -127,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				AD7AB76520E6E62800ED965D /* PopBounceButton_Example.app */,
+				ADFE0D3621D96E4D00A8D46D /* PopBounceButton_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,10 +187,20 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		ADFE0D3721D96E4D00A8D46D /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				ADFE0D3821D96E4D00A8D46D /* PopBounceButtonSpec.swift */,
+				ADFE0D3A21D96E4D00A8D46D /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		B0EE3BECBE3FFCFC5BD6AD7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				33FAAEAA16BD09A8C1B4D752 /* Pods_PopBounceButton_Example.framework */,
+				B111491302068C79AA92D740 /* Pods_PopBounceButton_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -187,19 +227,43 @@
 			productReference = AD7AB76520E6E62800ED965D /* PopBounceButton_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
+		ADFE0D3521D96E4D00A8D46D /* PopBounceButton_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADFE0D3F21D96E4D00A8D46D /* Build configuration list for PBXNativeTarget "PopBounceButton_Tests" */;
+			buildPhases = (
+				1BE2442F05138264CDA0FDBC /* [CP] Check Pods Manifest.lock */,
+				ADFE0D3221D96E4D00A8D46D /* Sources */,
+				ADFE0D3321D96E4D00A8D46D /* Frameworks */,
+				ADFE0D3421D96E4D00A8D46D /* Resources */,
+				4F67BE82594DB97AF4B6632B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ADFE0D3C21D96E4D00A8D46D /* PBXTargetDependency */,
+			);
+			name = PopBounceButton_Tests;
+			productName = PopBounceButton_Tests;
+			productReference = ADFE0D3621D96E4D00A8D46D /* PopBounceButton_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		AD7AB75D20E6E62800ED965D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Mac Gallagher";
 				TargetAttributes = {
 					AD7AB76420E6E62800ED965D = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1000;
+					};
+					ADFE0D3521D96E4D00A8D46D = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = AD7AB76420E6E62800ED965D;
 					};
 				};
 			};
@@ -217,6 +281,7 @@
 			projectRoot = "";
 			targets = (
 				AD7AB76420E6E62800ED965D /* PopBounceButton_Example */,
+				ADFE0D3521D96E4D00A8D46D /* PopBounceButton_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -234,9 +299,58 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADFE0D3421D96E4D00A8D46D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1BE2442F05138264CDA0FDBC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PopBounceButton_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F67BE82594DB97AF4B6632B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PopBounceButton_Tests/Pods-PopBounceButton_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PopBounceButton/PopBounceButton.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopBounceButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PopBounceButton_Tests/Pods-PopBounceButton_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7A042143AFFD0743A9F38231 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -297,7 +411,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADFE0D3221D96E4D00A8D46D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADFE0D3921D96E4D00A8D46D /* PopBounceButtonSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ADFE0D3C21D96E4D00A8D46D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD7AB76420E6E62800ED965D /* PopBounceButton_Example */;
+			targetProxy = ADFE0D3B21D96E4D00A8D46D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AD7AB77120E6E62900ED965D /* LaunchScreen.storyboard */ = {
@@ -466,6 +596,51 @@
 			};
 			name = Release;
 		};
+		ADFE0D3D21D96E4D00A8D46D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1C9FFC6F2C09CC482075227 /* Pods-PopBounceButton_Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DYZ8Y2U8DB;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.macgallagher.PopBounceButton-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PopBounceButton_Example.app/PopBounceButton_Example";
+			};
+			name = Debug;
+		};
+		ADFE0D3E21D96E4D00A8D46D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB2B508B74EFCE664EA381C4 /* Pods-PopBounceButton_Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DYZ8Y2U8DB;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.macgallagher.PopBounceButton-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PopBounceButton_Example.app/PopBounceButton_Example";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -483,6 +658,15 @@
 			buildConfigurations = (
 				AD7AB77820E6E62900ED965D /* Debug */,
 				AD7AB77920E6E62900ED965D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADFE0D3F21D96E4D00A8D46D /* Build configuration list for PBXNativeTarget "PopBounceButton_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADFE0D3D21D96E4D00A8D46D /* Debug */,
+				ADFE0D3E21D96E4D00A8D46D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
