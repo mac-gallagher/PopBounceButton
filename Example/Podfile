@@ -1,5 +1,17 @@
 use_frameworks!
 
+#platform :ios, '9.0'
+
+workspace 'PopBounceButton'
+
 target 'PopBounceButton_Example' do
     pod 'PopBounceButton', :path => '../'
+end
+
+target 'PopBounceButton_Tests' do
+    pod 'PopBounceButton', :path => '../'
+    pod 'Quick'
+    pod 'Nimble'
+    
+    inherit! :search_paths
 end
