@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "PopBounceButton"
-  s.version      = "1.2.1"
+  s.version      = "1.2.2"
   s.platform     = :ios, "9.0"
   s.summary      = "A customizable animated button inspired by the familiar button stack from Tinder."
 
@@ -15,7 +15,7 @@ A customizable animated button built with Facebook's Pop animation library. Insp
   s.documentation_url = "https://github.com/mac-gallagher/PopBounceButton/tree/master/README.md"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author             = { "Mac Gallagher" => "jmgallagher36@gmail.com" }
-  s.source       = { :git => "https://github.com/mac-gallagher/PopBounceButton.git", :tag => "v1.2.1" }
+  s.source       = { :git => "https://github.com/mac-gallagher/PopBounceButton.git", :tag => "v1.2.2" }
 
   s.swift_version = "4.2"
   s.source_files = "PopBounceButton/Classes/**/*"
