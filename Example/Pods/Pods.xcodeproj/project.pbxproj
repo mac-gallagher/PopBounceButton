@@ -85,7 +85,6 @@
 		6CE7AC2102F95160F57359A07F1AF393 /* ExpectationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33453A70AA80339AD82580E7B9EDBCAF /* ExpectationMessage.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		75772A06CA7343499C5D5559A261A7CB /* Pods-PopBounceButton_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FC6E621C8E197DCDF9EF4923FF33B2 /* Pods-PopBounceButton_Example-dummy.m */; };
 		7587E87952BC648A18C5898B98B6F635 /* BeLessThanOrEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E1616EF48DDB6FF276543CA8FFCDD3 /* BeLessThanOrEqual.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		760C522AEAD970381D8CCC20737D7E67 /* PopAnimator+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8946F425602A46FDA36BD1F9481FDD46 /* PopAnimator+Helpers.swift */; };
 		7785B0A164079A4C82DA8F0F6874B67F /* ThrowAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB9DF313FD2E100158DC3C70502DA56 /* ThrowAssertion.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		77BE1388B5AB1BB1E6C01A006FF86063 /* QuickSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A70BBB5DD7DE750FA5C5E613D418E1E /* QuickSpec.m */; };
 		783F670292F19F9798E47AFEEBAB14B3 /* AssertionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53076D6A89E84A7EE50C48E735FF6BEC /* AssertionRecorder.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -127,6 +126,7 @@
 		AA19111AEBD6CEB244FC81BE9C15FBE8 /* BeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081A3ED5D06DFAB5D1DC32F1E421A26 /* BeginWith.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		AAB5290754D9060D86FB2C89DD7ADCC3 /* NMBExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA9D5E00A3FB6DAC0C0AE9D44A1F0F4 /* NMBExpectation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		AB9676166F87B12A0D7D187E8BD9A3B3 /* POPAnimationRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = A2C293655953D6C182CA7F20FA5F3488 /* POPAnimationRuntime.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AD80E7E421E930D2009CED59 /* ButtonAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80E7E221E930AF009CED59 /* ButtonAnimator.swift */; };
 		AF3691ABC1385EF83DA7FE9EF2F94F40 /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67265D094D4022F742FB6B867ACF7F04 /* Equal.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		B0A24F0E24E02201A246F0D58523ED7E /* CwlCatchException.h in Headers */ = {isa = PBXBuildFile; fileRef = C4234E0B0CB549041E04F86215FEFD9D /* CwlCatchException.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0C88072D75620D68F7C690CF2CD2D92 /* CwlMachBadInstructionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = EFA9CA96289A3299C0D6DAC705A5E983 /* CwlMachBadInstructionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -337,7 +337,6 @@
 		845F5046C383B88C9EB88BF77F2C108E /* POPCGUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPCGUtils.h; path = pop/POPCGUtils.h; sourceTree = "<group>"; };
 		84C7B8E497D336A926AFFFD35DFD7937 /* Quick.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Quick.xcconfig; sourceTree = "<group>"; };
 		864A3FA3F65930BB8934CE455305639B /* SuiteHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SuiteHooks.swift; path = Sources/Quick/Hooks/SuiteHooks.swift; sourceTree = "<group>"; };
-		8946F425602A46FDA36BD1F9481FDD46 /* PopAnimator+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PopAnimator+Helpers.swift"; path = "PopBounceButton/Classes/PopAnimator+Helpers.swift"; sourceTree = "<group>"; };
 		8B23C29E5387ED66107403E5DAB68C73 /* BeLessThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThan.swift; path = Sources/Nimble/Matchers/BeLessThan.swift; sourceTree = "<group>"; };
 		8C518934DFF2C0682CF0A722B4B8D7B3 /* NMBObjCMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NMBObjCMatcher.swift; path = Sources/Nimble/Adapters/NMBObjCMatcher.swift; sourceTree = "<group>"; };
 		8C929CD7DF2F31A19DEB3F7FFD68A501 /* DSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSL.h; path = Sources/NimbleObjectiveC/DSL.h; sourceTree = "<group>"; };
@@ -374,6 +373,7 @@
 		AAC9C2889EAABB593B28F06FC04C3D3D /* ThrowError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThrowError.swift; path = Sources/Nimble/Matchers/ThrowError.swift; sourceTree = "<group>"; };
 		AB6D4953FFF7FAAD9A3C94757755035C /* Pods-PopBounceButton_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PopBounceButton_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		ACD10808328A5BE4B3A8C44BAF6BECEB /* Nimble-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-prefix.pch"; sourceTree = "<group>"; };
+		AD80E7E221E930AF009CED59 /* ButtonAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAnimator.swift; sourceTree = "<group>"; };
 		AF1882863B4D275BAABA7CBA606AEA75 /* World+DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "World+DSL.swift"; path = "Sources/Quick/DSL/World+DSL.swift"; sourceTree = "<group>"; };
 		B01F3062B4FFF58B0FEE74F792F205AD /* POPAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPAnimation.mm; path = pop/POPAnimation.mm; sourceTree = "<group>"; };
 		B1F4137D30CCC077B85E6F61999E5BF6 /* POPSpringAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPSpringAnimation.h; path = pop/POPSpringAnimation.h; sourceTree = "<group>"; };
@@ -772,7 +772,7 @@
 		DD77DAC4A0E497CA3186134BF33F892A /* PopBounceButton */ = {
 			isa = PBXGroup;
 			children = (
-				8946F425602A46FDA36BD1F9481FDD46 /* PopAnimator+Helpers.swift */,
+				AD80E7E221E930AF009CED59 /* ButtonAnimator.swift */,
 				C4078784B4952AB3A66BC00EBF492739 /* PopBounceButton.swift */,
 				0B5AD13D0FE9B96418FF2F30EEE85F46 /* Pod */,
 				C92731281EB80E41D7A549E8E215F39E /* Support Files */,
@@ -1114,8 +1114,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				760C522AEAD970381D8CCC20737D7E67 /* PopAnimator+Helpers.swift in Sources */,
 				DB93D91FA428806DAB92CB2E2542C75B /* PopBounceButton-dummy.m in Sources */,
+				AD80E7E421E930D2009CED59 /* ButtonAnimator.swift in Sources */,
 				D7FDCA0D6405F39F67D17D4A5E176225 /* PopBounceButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

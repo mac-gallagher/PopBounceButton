@@ -20,6 +20,7 @@
 		AD7AB78220E6E6A800ED965D /* TinderDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AB77C20E6E6A800ED965D /* TinderDemoViewController.swift */; };
 		AD7AB78320E6E6A800ED965D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AB77D20E6E6A800ED965D /* UIView+Extensions.swift */; };
 		AD7AB78520E6E6A800ED965D /* AnimationDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7AB77F20E6E6A800ED965D /* AnimationDemoViewController.swift */; };
+		AD80E7E621E932B0009CED59 /* MockButtonAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD80E7E521E932B0009CED59 /* MockButtonAnimator.swift */; };
 		ADE42D7621B343F8006BD209 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE42D7521B343F8006BD209 /* Slider.swift */; };
 		ADE42D7821B34416006BD209 /* ResizingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE42D7721B34416006BD209 /* ResizingLabel.swift */; };
 		ADE42D7B21B3483D006BD209 /* TinderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE42D7A21B3483D006BD209 /* TinderButton.swift */; };
@@ -57,6 +58,7 @@
 		AD7AB77C20E6E6A800ED965D /* TinderDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinderDemoViewController.swift; sourceTree = "<group>"; };
 		AD7AB77D20E6E6A800ED965D /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		AD7AB77F20E6E6A800ED965D /* AnimationDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationDemoViewController.swift; sourceTree = "<group>"; };
+		AD80E7E521E932B0009CED59 /* MockButtonAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockButtonAnimator.swift; sourceTree = "<group>"; };
 		ADE42D7521B343F8006BD209 /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 		ADE42D7721B34416006BD209 /* ResizingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizingLabel.swift; sourceTree = "<group>"; };
 		ADE42D7A21B3483D006BD209 /* TinderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderButton.swift; sourceTree = "<group>"; };
@@ -176,6 +178,14 @@
 			path = PopBounceButton;
 			sourceTree = "<group>";
 		};
+		AD80E7E721E932B6009CED59 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ADFE0D3A21D96E4D00A8D46D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		ADE42D7921B34429006BD209 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,8 +200,9 @@
 		ADFE0D3721D96E4D00A8D46D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				AD80E7E521E932B0009CED59 /* MockButtonAnimator.swift */,
 				ADFE0D3821D96E4D00A8D46D /* PopBounceButtonSpec.swift */,
-				ADFE0D3A21D96E4D00A8D46D /* Info.plist */,
+				AD80E7E721E932B6009CED59 /* Supporting Files */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -415,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD80E7E621E932B0009CED59 /* MockButtonAnimator.swift in Sources */,
 				ADFE0D3921D96E4D00A8D46D /* PopBounceButtonSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
