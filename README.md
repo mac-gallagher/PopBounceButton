@@ -4,12 +4,8 @@
 ![license](https://img.shields.io/cocoapods/l/PopBounceButton.svg)
 ![CocoaPods](https://img.shields.io/cocoapods/p/PopBounceButton.svg)
 
+# About
 A customizable animated button built with Facebook's Pop animation library. Inspired by the familiar button stack from Tinder.
-
-
-![TinderDemo](https://raw.githubusercontent.com/mac-gallagher/PopBounceButton/master/Images/tinder_demo.gif)
-
-![MessageButtonExample](https://raw.githubusercontent.com/mac-gallagher/PopBounceButton/master/Images/example.gif)
 
 # Features
 - [x] Lightweight and highly customizable
@@ -18,6 +14,10 @@ A customizable animated button built with Facebook's Pop animation library. Insp
 
 # Example
 To run the example project, clone the repo and run the `PopBounceButton-Example` target. 
+
+![TinderDemo](https://raw.githubusercontent.com/mac-gallagher/PopBounceButton/master/Images/tinder_demo.gif)
+
+![MessageButtonExample](https://raw.githubusercontent.com/mac-gallagher/PopBounceButton/master/Images/example.gif)
 
 # Requirements
 * iOS 9.0+
